@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://diyetisyenyunusaksu.com/sitemap.xml
