@@ -14,6 +14,8 @@
   --wrong:    #b91c1c;
   --wrong-bg: #fef2f2;
   --border:   #c8dfd0;
+  --sel:      #2563EB;
+  --sel-bg:   #EFF6FF;
   --r:        12px;
   --shadow:   0 2px 20px rgba(45,106,79,.09);
 }
@@ -29,6 +31,8 @@
     --wrong:    #f87171;
     --wrong-bg: #2d0a0a;
     --border:   #2a4a30;
+    --sel:      #60A5FA;
+    --sel-bg:   #1E3A5F;
     color-scheme: dark;
   }
 }
@@ -43,6 +47,8 @@
   --wrong:    #f87171;
   --wrong-bg: #2d0a0a;
   --border:   #2a4a30;
+  --sel:      #60A5FA;
+  --sel-bg:   #1E3A5F;
   color-scheme: dark;
 }
 
@@ -220,8 +226,8 @@ body {
 }
 .option:hover { border-color: var(--accent); background: var(--a-pale); }
 .option.selected {
-  border-color: var(--accent);
-  background: var(--a-light);
+  border-color: var(--sel);
+  background: var(--sel-bg);
 }
 .option-letter {
   flex-shrink: 0;
@@ -239,9 +245,9 @@ body {
   transition: background .15s, border-color .15s;
 }
 .option.selected .option-letter {
-  background: var(--accent);
+  background: var(--sel);
   color: #fff;
-  border-color: var(--accent);
+  border-color: var(--sel);
 }
 
 /* ── Score ───────────────────────────────────────────────── */
@@ -583,10 +589,6 @@ function selectOption(i) {
   chosen[cur] = i;
   document.querySelectorAll('.option').forEach((el, idx) => {
     el.classList.toggle('selected', idx === i);
-    const letter = el.querySelector('.option-letter');
-    letter.style.background = idx === i ? 'var(--accent)' : '';
-    letter.style.color      = idx === i ? '#fff' : '';
-    letter.style.borderColor= idx === i ? 'var(--accent)' : '';
   });
   document.getElementById('btn-next').disabled = false;
 }
