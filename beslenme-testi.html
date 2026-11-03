@@ -1,0 +1,707 @@
+<title>Beslenme Bilgi Testi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@400;600;700&display=swap">
+<style>
+/* ── Tokens ──────────────────────────────────────────────── */
+:root {
+  --bg:       #f4f7f4;
+  --card:     #ffffff;
+  --fg:       #182818;
+  --muted:    #4d6b55;
+  --accent:   #2D6A4F;
+  --a-light:  #e6f4ec;
+  --a-pale:   #f0faf4;
+  --wrong:    #b91c1c;
+  --wrong-bg: #fef2f2;
+  --border:   #c8dfd0;
+  --sel:      #2563EB;
+  --sel-bg:   #EFF6FF;
+  --r:        12px;
+  --shadow:   0 2px 20px rgba(45,106,79,.09);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:       #0d1a10;
+    --card:     #172318;
+    --fg:       #e2f0e5;
+    --muted:    #7aaa85;
+    --accent:   #4ade80;
+    --a-light:  #1a3a22;
+    --a-pale:   #121f14;
+    --wrong:    #f87171;
+    --wrong-bg: #2d0a0a;
+    --border:   #2a4a30;
+    --sel:      #60A5FA;
+    --sel-bg:   #1E3A5F;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:       #0d1a10;
+  --card:     #172318;
+  --fg:       #e2f0e5;
+  --muted:    #7aaa85;
+  --accent:   #4ade80;
+  --a-light:  #1a3a22;
+  --a-pale:   #121f14;
+  --wrong:    #f87171;
+  --wrong-bg: #2d0a0a;
+  --border:   #2a4a30;
+  --sel:      #60A5FA;
+  --sel-bg:   #1E3A5F;
+  color-scheme: dark;
+}
+
+/* ── Reset & base ────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 32px;
+  padding-left:  max(16px, env(safe-area-inset-left,  0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* ── Layout ──────────────────────────────────────────────── */
+.wrap {
+  width: 100%;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.site-header a {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+.site-header a:hover { text-decoration: underline; }
+.pill-tag {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  background: var(--a-light);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+/* ── Card ────────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  padding: 32px;
+}
+@media (max-width: 480px) { .card { padding: 22px 18px; } }
+
+/* ── Screen switching ────────────────────────────────────── */
+.screen { display: none; }
+.screen.active { display: contents; }
+
+/* ── Intro screen ────────────────────────────────────────── */
+.intro-card { display: flex; flex-direction: column; gap: 20px; }
+.intro-card h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  text-wrap: balance;
+  color: var(--fg);
+}
+.intro-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.meta-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .85rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+.meta-chip svg { flex-shrink: 0; }
+.intro-topics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  list-style: none;
+}
+.intro-topics li {
+  font-size: .9rem;
+  color: var(--muted);
+  padding: 8px 12px;
+  background: var(--a-pale);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.intro-topics li::before { content: "🌿 "; }
+
+/* ── Button ──────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--r);
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: opacity .15s, transform .1s;
+  align-self: flex-start;
+}
+.btn:hover { opacity: .88; }
+.btn:active { transform: scale(.97); }
+.btn:disabled { opacity: .4; cursor: default; transform: none; }
+.btn.full { width: 100%; }
+
+/* ── Progress ────────────────────────────────────────────── */
+.progress-wrap {
+  height: 5px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width .35s ease;
+}
+.q-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* ── Question card ───────────────────────────────────────── */
+.q-card { display: flex; flex-direction: column; gap: 22px; }
+.q-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  text-wrap: balance;
+}
+.options { display: flex; flex-direction: column; gap: 10px; }
+.option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--card);
+  transition: border-color .15s, background .15s;
+  font-size: .95rem;
+  line-height: 1.4;
+  text-align: left;
+}
+.option:hover { border-color: var(--accent); background: var(--a-pale); }
+.option.selected {
+  border-color: var(--sel);
+  background: var(--sel-bg);
+}
+.option-letter {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--a-light);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: .8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--border);
+  transition: background .15s, border-color .15s;
+}
+.option.selected .option-letter {
+  background: var(--sel);
+  color: #fff;
+  border-color: var(--sel);
+}
+
+/* ── Score ───────────────────────────────────────────────── */
+.score-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  padding: 32px 24px 24px;
+}
+.score-ring {
+  position: relative;
+  width: 110px;
+  height: 110px;
+}
+.score-ring svg { transform: rotate(-90deg); }
+.score-ring circle { fill: none; stroke-width: 9; stroke-linecap: round; }
+.ring-bg   { stroke: var(--border); }
+.ring-fill { stroke: var(--accent); transition: stroke-dashoffset 1s ease; }
+.score-num {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.score-num span:first-child { font-size: 1.9rem; color: var(--accent); line-height: 1; }
+.score-num span:last-child  { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+
+.score-banner h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  text-wrap: balance;
+}
+.score-banner p { font-size: .95rem; color: var(--muted); max-width: 360px; }
+
+/* ── Email box ───────────────────────────────────────────── */
+.email-box {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--a-pale);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 24px;
+}
+.email-box h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+}
+.email-box p { font-size: .9rem; color: var(--muted); }
+.email-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.email-row input {
+  flex: 1;
+  min-width: 200px;
+  font-family: 'Lato', sans-serif;
+  font-size: .95rem;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--fg);
+  outline: none;
+  transition: border-color .15s;
+}
+.email-row input:focus { border-color: var(--accent); }
+.email-row input::placeholder { color: var(--muted); }
+.thanks-msg {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--accent);
+  padding: 12px 0;
+}
+
+/* ── Review ──────────────────────────────────────────────── */
+.review-list { display: flex; flex-direction: column; gap: 12px; }
+.review-item {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.review-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--card);
+}
+.review-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .75rem;
+  font-weight: 700;
+  margin-top: 1px;
+}
+.review-icon.ok   { background: var(--a-light); color: var(--accent); }
+.review-icon.bad  { background: var(--wrong-bg); color: var(--wrong); }
+.review-q { font-size: .9rem; font-weight: 600; line-height: 1.4; min-width: 0; }
+.review-answers {
+  padding: 10px 16px 14px calc(16px + 22px + 12px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.review-answer { font-size: .85rem; color: var(--muted); }
+.review-answer.correct { color: var(--accent); font-weight: 700; }
+.review-answer.user-wrong { color: var(--wrong); text-decoration: line-through; }
+
+.section-label {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 4px;
+}
+</style>
+
+<!-- Intro -------------------------------------------------->
+<div class="wrap">
+  <header class="site-header">
+    <a href="https://diyetisyenyunusaksu.com">Uzm. Dyt. Yunus Aksu</a>
+    <span class="pill-tag">Test</span>
+  </header>
+
+  <!-- SCREEN: Intro -->
+  <section id="s-intro" class="screen active">
+    <div class="card intro-card">
+      <div>
+        <div class="pill-tag" style="margin-bottom:12px;display:inline-block">🌿 Beslenme Bilgi Testi</div>
+        <h1>Beslenme hakkında ne kadar bilgi sahibisiniz?</h1>
+      </div>
+      <div class="intro-meta">
+        <span class="meta-chip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          ~3 dakika
+        </span>
+        <span class="meta-chip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          8 soru
+        </span>
+      </div>
+      <ul class="intro-topics">
+        <li>Makro &amp; mikro besinler</li>
+        <li>Spor beslenmesi</li>
+        <li>Yeme bozuklukları</li>
+        <li>Bağırsak sağlığı</li>
+      </ul>
+      <p style="font-size:.88rem;color:var(--muted)">Test boyunca geri bildirim verilmez. Sonuçlar sonda gösterilir.</p>
+      <button class="btn" onclick="startQuiz()">Teste Başla →</button>
+    </div>
+  </section>
+
+  <!-- SCREEN: Quiz -->
+  <section id="s-quiz" class="screen">
+    <div class="progress-wrap"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="q-meta">
+      <span id="q-counter">Soru 1 / 8</span>
+      <span id="q-topic"></span>
+    </div>
+    <div class="card q-card">
+      <h2 class="q-text" id="q-text"></h2>
+      <div class="options" id="q-options"></div>
+    </div>
+    <button class="btn" id="btn-next" onclick="nextQuestion()" disabled>Sonraki →</button>
+  </section>
+
+  <!-- SCREEN: Results -->
+  <section id="s-result" class="screen">
+
+    <!-- Score ring -->
+    <div class="card score-banner" id="score-banner">
+      <div class="score-ring">
+        <svg viewBox="0 0 110 110" width="110" height="110">
+          <circle class="ring-bg"   cx="55" cy="55" r="47"/>
+          <circle class="ring-fill" id="ring-fill" cx="55" cy="55" r="47"
+                  stroke-dasharray="295.3" stroke-dashoffset="295.3"/>
+        </svg>
+        <div class="score-num">
+          <span id="score-n">0</span>
+          <span>/ 8</span>
+        </div>
+      </div>
+      <h2 id="result-title"></h2>
+      <p  id="result-sub"></p>
+    </div>
+
+    <!-- Email capture -->
+    <div class="email-box" id="email-box">
+      <h3 id="email-title"></h3>
+      <p  id="email-sub"></p>
+      <form id="email-form" onsubmit="submitEmail(event)">
+        <div class="email-row">
+          <input type="email" id="email-input" name="EMAIL"
+                 placeholder="ornek@email.com" autocomplete="email" required>
+          <button class="btn" type="submit">Abone Ol</button>
+        </div>
+      </form>
+      <div id="thanks-msg" class="thanks-msg" hidden>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Teşekkürler! Yakında gelen kutunuzda görüşürüz. 🎉
+      </div>
+    </div>
+
+    <!-- Answer review -->
+    <div>
+      <div class="section-label">Sorular ve Cevaplar</div>
+      <div class="review-list" id="review-list"></div>
+    </div>
+
+  </section>
+
+</div><!-- /wrap -->
+
+<script>
+/* ── Questions ─────────────────────────────────────────── */
+const QS = [
+  {
+    topic: 'Lif',
+    q: 'Yetişkin bireyler için günlük önerilen ortalama lif miktarı nedir?',
+    opts: ['10–15 gram', '25–38 gram', '50–60 gram', '5–10 gram'],
+    ans: 1
+  },
+  {
+    topic: 'Protein',
+    q: 'Whey proteinin bezelye proteinine kıyasla en belirgin üstünlüğü nedir?',
+    opts: ['Daha düşük maliyeti', 'Daha az alerjen olması', 'Yüksek lösin içeriği', 'Daha yüksek karbonhidrat oranı'],
+    ans: 2
+  },
+  {
+    topic: 'Hidrasyon',
+    q: 'Vücut ağırlığının yüzde kaçı kadar sıvı kaybı atletik performansı ciddi biçimde düşürmeye başlar?',
+    opts: ['%0,5', '%2', '%5', '%10'],
+    ans: 1
+  },
+  {
+    topic: 'Anti-inflamatuar',
+    q: 'Aşağıdakilerden hangisi anti-inflamatuar etkiye sahip değildir?',
+    opts: ['Zeytinyağı', 'Trans yağlar', 'Yağlı deniz balıkları', 'Zerdeçal'],
+    ans: 1
+  },
+  {
+    topic: 'Ortoreksiya',
+    q: 'Ortoreksiya nervozayı diğer yeme bozukluklarından ayıran temel özellik nedir?',
+    opts: [
+      'Yemek yemeyi tamamen reddetmek',
+      'Sağlıklı yemeye yönelik takıntılı ve kısıtlayıcı tutum',
+      'Tekrarlayan aşırı yeme atakları',
+      'Kendini kusturmaya bağlı beden imgesi bozukluğu'
+    ],
+    ans: 1
+  },
+  {
+    topic: 'Spor Beslenmesi',
+    q: 'Egzersiz sonrası kas onarımı için protein tüketimi hangi zaman aralığında en etkilidir?',
+    opts: ['Egzersizden 3–4 saat sonra', 'Egzersizden önce', 'Egzersizden 30–60 dakika içinde', 'Ertesi sabah'],
+    ans: 2
+  },
+  {
+    topic: 'Bağırsak Sağlığı',
+    q: 'Antibiyotik kullanımı sonrasında bağırsak florasını desteklemek için hangi strateji önerilir?',
+    opts: [
+      'Tamamen sıvı diyete geçmek',
+      'Probiyotik içeren besinler tüketip lif alımını artırmak',
+      'Protein alımını kısıtlamak',
+      'Uzun süreli açlık uygulamak'
+    ],
+    ans: 1
+  },
+  {
+    topic: 'Yeme Bozuklukları',
+    q: 'DSM-5 kriterlerine göre tıkınırcasına yeme bozukluğunda (BEB) minimum atak sıklığı nedir?',
+    opts: [
+      'Haftada 1 kez, en az 3 ay',
+      'Haftada 3 kez, en az 1 ay',
+      'Ayda 1 kez, en az 6 ay',
+      'Her gün, en az 2 hafta'
+    ],
+    ans: 0
+  }
+];
+
+/* ── State ─────────────────────────────────────────────── */
+const BREVO = 'https://9237d74e.sibforms.com/serve/MUIFAAui1owcltlK9E6Oy2ug2KWv78be_EwMSUiDvNMfqAj2T9bhcN0d0fwqKbS9p93bhfw6pQnLZnOKRaPy9kn10h0rk4Wwfk0DgaxhbszQNaSdnoDcioSBjBuNVvHR2KUW7LaFvLPkqxpZZInezd_bh8h1EVZ3YGTh7xjS6ZPsJl73Y4hQQlzoKl8SKqGHrnriS29GT3uU5se1RQ==';
+let cur = 0, chosen = new Array(QS.length).fill(-1);
+const LETTERS = ['A','B','C','D'];
+
+/* ── Helpers ───────────────────────────────────────────── */
+function show(id) {
+  ['s-intro','s-quiz','s-result'].forEach(s => {
+    const el = document.getElementById(s);
+    el.classList.remove('active');
+  });
+  document.getElementById(id).classList.add('active');
+}
+
+/* ── Quiz flow ─────────────────────────────────────────── */
+function startQuiz() { cur = 0; renderQuestion(); show('s-quiz'); }
+
+function renderQuestion() {
+  const q = QS[cur];
+  const pct = (cur / QS.length) * 100;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('q-counter').textContent = `Soru ${cur + 1} / ${QS.length}`;
+  document.getElementById('q-topic').textContent   = q.topic;
+  document.getElementById('q-text').textContent    = q.q;
+
+  const wrap = document.getElementById('q-options');
+  wrap.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option' + (chosen[cur] === i ? ' selected' : '');
+    btn.innerHTML = `<span class="option-letter">${LETTERS[i]}</span>${opt}`;
+    btn.onclick = () => selectOption(i);
+    wrap.appendChild(btn);
+  });
+
+  document.getElementById('btn-next').disabled = chosen[cur] === -1;
+  document.getElementById('btn-next').textContent =
+    cur === QS.length - 1 ? 'Sonuçları Gör →' : 'Sonraki →';
+}
+
+function selectOption(i) {
+  chosen[cur] = i;
+  document.querySelectorAll('.option').forEach((el, idx) => {
+    el.classList.toggle('selected', idx === i);
+  });
+  document.getElementById('btn-next').disabled = false;
+}
+
+function nextQuestion() {
+  if (cur < QS.length - 1) { cur++; renderQuestion(); }
+  else showResults();
+}
+
+/* ── Results ───────────────────────────────────────────── */
+function showResults() {
+  show('s-result');
+
+  const score = QS.reduce((n, q, i) => n + (chosen[i] === q.ans ? 1 : 0), 0);
+  const perfect = score === QS.length;
+
+  /* Score ring animation */
+  document.getElementById('score-n').textContent = score;
+  const circ = 2 * Math.PI * 47; // ≈ 295.3
+  const offset = circ * (1 - score / QS.length);
+  requestAnimationFrame(() => {
+    document.getElementById('ring-fill').style.strokeDashoffset = offset;
+  });
+
+  /* Headline */
+  let title, sub;
+  if (perfect) {
+    title = 'Mükemmel! Beslenme bilginiz üst düzey. 🎉';
+    sub   = 'Tüm soruları doğru yanıtladınız. Uzman bir diyetisyen kadar bilgilisiniz!';
+  } else if (score >= 6) {
+    title = 'Çok iyi! Küçük bir atlamış olabilirsiniz.';
+    sub   = `${score}/8 doğru yanıtla oldukça iyi bir sonuç. Birkaç konuyu tekrar etmeye değer.`;
+  } else if (score >= 4) {
+    title = 'İyi başlangıç! Öğrenecek daha çok şey var.';
+    sub   = `${score}/8 doğru. Beslenme bilginizi güçlendirmek için doğru yerdesiniz.`;
+  } else {
+    title = 'Beslenme bilginizi geliştirme zamanı!';
+    sub   = `${score}/8 doğru. Endişelenmeyin — doğru bilgilere ulaşmak bu kadar kolay.`;
+  }
+  document.getElementById('result-title').textContent = title;
+  document.getElementById('result-sub').textContent   = sub;
+
+  /* Email box */
+  if (perfect) {
+    document.getElementById('email-title').textContent = 'Yeni testler ve beslenme içerikleri için abone olun';
+    document.getElementById('email-sub').textContent   =
+      'Bilgi seviyenizi koruyun. Yeni testler ve güncel araştırmalar doğrudan gelen kutunuza gelsin.';
+  } else {
+    document.getElementById('email-title').textContent = 'Bilginizi geliştirin — bültenimize ücretsiz abone olun';
+    document.getElementById('email-sub').textContent   =
+      'Her ay güncel beslenme araştırmaları, pratik ipuçları ve yeni testler e-posta ile gelsin.';
+  }
+
+  /* Review */
+  buildReview(score);
+}
+
+function buildReview(score) {
+  const list = document.getElementById('review-list');
+  list.innerHTML = '';
+  QS.forEach((q, i) => {
+    const ok = chosen[i] === q.ans;
+    const item = document.createElement('div');
+    item.className = 'review-item';
+
+    const header = document.createElement('div');
+    header.className = 'review-header';
+
+    const icon = document.createElement('div');
+    icon.className = 'review-icon ' + (ok ? 'ok' : 'bad');
+    icon.textContent = ok ? '✓' : '✗';
+
+    const qtext = document.createElement('div');
+    qtext.className = 'review-q';
+    qtext.textContent = `${i + 1}. ${q.q}`;
+
+    header.appendChild(icon);
+    header.appendChild(qtext);
+
+    const answers = document.createElement('div');
+    answers.className = 'review-answers';
+
+    if (!ok && chosen[i] !== -1) {
+      const wrong = document.createElement('div');
+      wrong.className = 'review-answer user-wrong';
+      wrong.textContent = `Sizin cevabınız: ${LETTERS[chosen[i]]}. ${q.opts[chosen[i]]}`;
+      answers.appendChild(wrong);
+    }
+
+    const right = document.createElement('div');
+    right.className = 'review-answer correct';
+    right.textContent = `Doğru cevap: ${LETTERS[q.ans]}. ${q.opts[q.ans]}`;
+    answers.appendChild(right);
+
+    item.appendChild(header);
+    item.appendChild(answers);
+    list.appendChild(item);
+  });
+}
+
+/* ── Email submit ──────────────────────────────────────── */
+async function submitEmail(e) {
+  e.preventDefault();
+  const email = document.getElementById('email-input').value.trim();
+  if (!email) return;
+
+  /* Submit via fetch no-cors (works from GitHub Pages) */
+  const fd = new FormData();
+  fd.append('EMAIL', email);
+  try { await fetch(BREVO, { method: 'POST', mode: 'no-cors', body: fd }); }
+  catch(_) { /* no-cors never throws CORS error; other errors are ok */ }
+
+  document.getElementById('email-form').hidden = true;
+  document.getElementById('thanks-msg').hidden = false;
+}
+</script>
