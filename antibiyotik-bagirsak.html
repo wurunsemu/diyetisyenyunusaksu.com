@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antibiyotik Sonrası Bağırsak Sağlığı | Diyetisyen Yunus Aksu</title>
+<meta name="description" content="Antibiyotikler bağırsak mikrobiyomunu nasıl etkiler? Güncel araştırmaların ışığında beslenme stratejileri ile bağırsak floranızı nasıl koruyabilirsiniz?">
+<link rel="canonical" href="https://diyetisyenyunusaksu.com/blog/antibiyotik-bagirsak.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,400&display=swap">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Antibiyotik Sonrası Bağırsak Sağlığı">
+<meta property="og:description" content="Antibiyotikler bağırsak floranı nasıl etkiler? Beslenmeyle nasıl toparlanırsınız?">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://diyetisyenyunusaksu.com/blog/antibiyotik-bagirsak.html">
+
+<style>
+/* ─── Tokens ─────────────────────────────────────────── */
+:root {
+  --bg:          #faf9f7;
+  --card:        #ffffff;
+  --text:        #1a1a1a;
+  --text-soft:   #555;
+  --text-muted:  #888;
+  --border:      #e8e4df;
+  --accent:      #2a7c5e;
+  --accent-bg:   #edf5f1;
+  --accent-light:#4a9d7c;
+  --warm:        #e8834a;
+  --tag-bg:      #f0ece7;
+  --tag-text:    #5c4a35;
+  --code-bg:     #f5f3f0;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:         #111210;
+    --card:       #1c1e1b;
+    --text:       #f0ede8;
+    --text-soft:  #b0aa9f;
+    --text-muted: #7a7570;
+    --border:     #2e302c;
+    --accent:     #4db88a;
+    --accent-bg:  #1a2e24;
+    --accent-light:#6dcda5;
+    --warm:       #e8834a;
+    --tag-bg:     #252520;
+    --tag-text:   #c4b49a;
+    --code-bg:    #1a1c18;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:         #111210;
+  --card:       #1c1e1b;
+  --text:       #f0ede8;
+  --text-soft:  #b0aa9f;
+  --text-muted: #7a7570;
+  --border:     #2e302c;
+  --accent:     #4db88a;
+  --accent-bg:  #1a2e24;
+  --accent-light:#6dcda5;
+  --warm:       #e8834a;
+  --tag-bg:     #252520;
+  --tag-text:   #c4b49a;
+  --code-bg:    #1a1c18;
+  color-scheme: dark;
+}
+
+/* ─── Reset & Base ───────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+img { max-width: 100%; height: auto; display: block }
+
+/* ─── Site Header ────────────────────────────────────── */
+.site-header {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 14px max(16px, env(safe-area-inset-left, 0px));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-logo {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.header-nav a {
+  color: var(--text-soft);
+  text-decoration: none;
+  font-size: .88rem;
+  transition: color .2s;
+}
+.header-nav a:hover { color: var(--accent) }
+.lang-toggle {
+  display: flex;
+  background: var(--tag-bg);
+  border-radius: 20px;
+  padding: 3px;
+  gap: 2px;
+}
+.lang-btn {
+  border: none;
+  background: transparent;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: .8rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all .2s;
+}
+.lang-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ─── Article Layout ─────────────────────────────────── */
+.article-container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 max(16px, env(safe-area-inset-left, 0px));
+}
+
+/* Hero Image */
+.hero-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.hero-img {
+  width: 100%;
+  height: clamp(220px, 40vw, 420px);
+  object-fit: cover;
+  display: block;
+}
+.hero-caption {
+  font-size: .75rem;
+  color: var(--text-muted);
+  text-align: right;
+  padding: 6px 16px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+.hero-caption a { color: var(--text-muted); }
+
+/* Article Header */
+.article-header {
+  padding-block: 40px 0;
+}
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.tag {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: .78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.article-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: balance;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.article-lead {
+  font-size: 1.1rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 36px;
+}
+.meta-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.meta-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--accent-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.meta-name { font-weight: 600; font-size: .9rem; }
+.meta-cred { font-size: .78rem; color: var(--text-muted); }
+.meta-divider { color: var(--border); }
+.meta-info { font-size: .82rem; color: var(--text-muted); }
+
+/* Article Body */
+.article-body {
+  margin-bottom: 48px;
+}
+.article-body h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin: 40px 0 14px;
+  color: var(--text);
+  text-wrap: balance;
+  scroll-margin-top: 80px;
+}
+.article-body h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 28px 0 10px;
+  color: var(--accent);
+}
+.article-body p {
+  margin-bottom: 18px;
+  color: var(--text-soft);
+}
+.article-body strong { color: var(--text); }
+.article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Pullquote */
+.pullquote {
+  border-left: 4px solid var(--accent);
+  margin: 32px 0;
+  padding: 16px 20px;
+  background: var(--accent-bg);
+  border-radius: 0 8px 8px 0;
+}
+.pullquote p {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text);
+  margin: 0;
+}
+
+/* Key Takeaway Box */
+.key-box {
+  background: var(--accent-bg);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 32px 0;
+}
+.key-box-title {
+  font-weight: 700;
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.key-box ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.key-box ul li {
+  color: var(--text-soft);
+  padding-left: 20px;
+  position: relative;
+  font-size: .95rem;
+}
+.key-box ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Infographic */
+.infographic-wrap {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 36px 0;
+  overflow-x: auto;
+}
+.infographic-title {
+  font-weight: 700;
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  text-align: center;
+}
+.infographic-wrap svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Citation */
+.citation-box {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 36px 0 0;
+  font-size: .82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.citation-box strong { color: var(--text-soft); }
+.citation-box a { color: var(--accent); word-break: break-all; }
+
+/* Newsletter CTA */
+.newsletter-cta {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  margin: 48px 0;
+  text-align: center;
+}
+.newsletter-cta h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.newsletter-cta p {
+  color: var(--text-muted);
+  font-size: .9rem;
+  margin-bottom: 20px;
+}
+.nl-form {
+  display: flex;
+  gap: 8px;
+  max-width: 400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.nl-form input {
+  flex: 1;
+  min-width: 160px;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: .9rem;
+  background: var(--bg);
+  color: var(--text);
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .2s;
+}
+.btn-primary:hover { background: var(--accent-light); }
+
+/* Footer */
+.article-footer {
+  border-top: 1px solid var(--border);
+  padding-block: 32px;
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.back-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.back-link:hover { opacity: .8 }
+.footer-share { font-size: .82rem; color: var(--text-muted); }
+
+/* Site footer */
+.site-footer {
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  padding: 24px max(16px, env(safe-area-inset-left, 0px));
+  text-align: center;
+  font-size: .82rem;
+  color: var(--text-muted);
+}
+.site-footer a { color: var(--accent); text-decoration: none; }
+
+/* Language sections */
+[data-lang] { display: none }
+[data-lang].visible { display: block }
+</style>
+</head>
+
+<body>
+
+<!-- Site Header -->
+<header class="site-header">
+  <a href="https://diyetisyenyunusaksu.com" class="site-logo">Dyt. Yunus Aksu</a>
+  <nav class="header-nav">
+    <a href="https://diyetisyenyunusaksu.com/#blog" data-lang-text='{"tr":"← Blog","en":"← Blog"}'>← Blog</a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('tr')" id="btn-tr">TR</button>
+      <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Image -->
+<div class="hero-wrap">
+  <img
+    class="hero-img"
+    src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=1400&auto=format&fit=crop&q=80"
+    alt="Antibiyotik hapları ve sağlıklı gıdalar"
+    loading="eager"
+  >
+</div>
+<div class="hero-caption">
+  Fotoğraf: <a href="https://unsplash.com/photos/pills-and-food" target="_blank" rel="noopener">Unsplash</a>
+</div>
+
+<!-- Article Container -->
+<div class="article-container">
+
+  <!-- ═══ TURKISH VERSION ═══ -->
+  <div data-lang="tr" class="visible">
+    <header class="article-header">
+      <div class="article-tags">
+        <span class="tag">Bağırsak Sağlığı</span>
+        <span class="tag">Antibiyotik</span>
+        <span class="tag">Mikrobiyom</span>
+        <span class="tag">Güncel Araştırma</span>
+      </div>
+      <h1 class="article-title">Antibiyotikler Bağırsağınızı Nasıl Etkiliyor? Bilim Ne Diyor, Ne Yemeli?</h1>
+      <p class="article-lead">Bir enfeksiyonu tedavi etmek için aldığınız antibiyotik, bağırsak floranızda aylar hatta yıllarca sürebilecek değişikliklere yol açabilir. Güncel araştırmalar bu "yan hasarı" önlemek için beslenmenin kritik rolünü ortaya koyuyor.</p>
+      <div class="article-meta">
+        <div class="meta-author">
+          <div class="meta-avatar">🥗</div>
+          <div>
+            <div class="meta-name">Dyt. Yunus Aksu</div>
+            <div class="meta-cred">Diyetisyen</div>
+          </div>
+        </div>
+        <span class="meta-divider">|</span>
+        <span class="meta-info">🗓 Kasım 2026</span>
+        <span class="meta-divider">|</span>
+        <span class="meta-info">⏱ 6 dk okuma</span>
+      </div>
+    </header>
+
+    <article class="article-body">
+
+      <p>Alexander Fleming'in 1928'de penisilin keşfetmesinden bu yana antibiyotikler modern tıbbın vazgeçilmez silahı oldu. Pnömoni, tüberküloz, cerrahi komplikasyonlar… Sayısız hayat kurtardılar. Ancak bu mucizelerin bir de gizli bedeli var: her antibiyotik kursu, bağırsak mikrobiyomuna —yani vücudumuzda yaşayan 100 trilyon mikroorganizmalık topluluğa— ciddi zararlar verebilir.</p>
+
+      <p><em>Gut Microbes</em> dergisinde Eylül 2026'da yayımlanan kapsamlı bir derleme, bu "disbiyoz" sürecini ve buna karşı beslenmeyle neler yapılabileceğini derinlemesine inceliyor. İşte bulgular:</p>
+
+      <div class="pullquote">
+        <p>"Antibiyotik tedavisi sonrasında bazı mikrobiyomlar hiçbir zaman tam olarak eski haline dönemez — hatta 12 aya kadar farklılıklar devam edebilir."</p>
+      </div>
+
+      <h2>Antibiyotikler Bağırsağı Nasıl Bozuyor?</h2>
+      <p>Antibiyotikler enfeksiyon yapan bakterileri öldürürken maalesef faydalı bağırsak bakterilerini de yerle bir eder. Bu yıkımın üç ana sonucu vardır:</p>
+
+      <h3>1. Kısa Zincirli Yağ Asitleri Azalır</h3>
+      <p>Bağırsak bakterilerinin lif fermentasyonuyla ürettiği bütirat, propiyonat ve asetat gibi kısa zincirli yağ asitleri (KZYA); bağırsak duvarını besler, sıkı bağlantı proteinlerini korur ve bağışıklık sistemini dengeler. Antibiyotikler bu bakterileri yok ettiğinde KZYA üretimi %76-90 oranında düşebilir. Bütirat azalınca bağırsak duvarındaki "sızdırmazlık" bozulur, iltihaplanma kapı aralar.</p>
+
+      <h3>2. Safra Asidi Döngüsü Altüst Olur</h3>
+      <p>Geniş spektrumlu antibiyotikler, primer safra asitlerini sekonder formlara dönüştüren bakterileri yok eder. Bu dönüşüm olmazsa bağırsak ortamı <em>Clostridium difficile</em> gibi tehlikeli bakterilerin çoğalması için elverişli hale gelir. Araştırmalar, vankomisin kullanan hastalarda sekonder/primer safra asidi oranının 100 kat artabildiğini gösteriyor.</p>
+
+      <h3>3. Triptofan Metabolizması Sekteye Uğrar</h3>
+      <p>Bağırsak bakterileri diyetteki triptofandan, bağırsak bariyerini koruyan ve bağışıklığı dengeleyen "indol" bileşikleri üretir. Antibiyotikler bu bakterileri eliminasyona uğrattığında indol üretimi neredeyse sıfıra iner. Bu durum erken yaşta gerçekleştiğinde yetişkinlikte alerji ve astım riskini artırabilir.</p>
+
+      <!-- INFOGRAPHIC -->
+      <div class="infographic-wrap">
+        <div class="infographic-title">ANTİBİYOTİK → DİSBİYOZ → HASTALIK → BESLENME STRATEJİLERİ</div>
+        <svg viewBox="0 0 680 380" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif" role="img" aria-label="Antibiyotik etkisi ve beslenme müdahalesi infografiği">
+
+          <!-- Background -->
+          <rect width="680" height="380" rx="12" fill="none"/>
+
+          <!-- Step 1: Antibiotics -->
+          <rect x="20" y="30" width="130" height="80" rx="10" fill="#fee2e2" stroke="#f87171" stroke-width="1.5"/>
+          <text x="85" y="56" text-anchor="middle" font-size="11" fill="#991b1b" font-weight="700">ANTİBİYOTİK</text>
+          <text x="85" y="74" text-anchor="middle" font-size="9.5" fill="#7f1d1d">Geniş spektrum</text>
+          <text x="85" y="87" text-anchor="middle" font-size="9.5" fill="#7f1d1d">Uzun kür</text>
+          <text x="85" y="100" text-anchor="middle" font-size="9.5" fill="#7f1d1d">Erken yaş maruziyeti</text>
+
+          <!-- Arrow 1 -->
+          <path d="M152 70 L175 70" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+
+          <!-- Step 2: Dysbiosis -->
+          <rect x="177" y="30" width="130" height="80" rx="10" fill="#ffedd5" stroke="#fb923c" stroke-width="1.5"/>
+          <text x="242" y="56" text-anchor="middle" font-size="11" fill="#9a3412" font-weight="700">DİSBİYOZ</text>
+          <text x="242" y="74" text-anchor="middle" font-size="9.5" fill="#7c2d12">↓ KZYA üretimi</text>
+          <text x="242" y="87" text-anchor="middle" font-size="9.5" fill="#7c2d12">↓ Safra asidi dönüşümü</text>
+          <text x="242" y="100" text-anchor="middle" font-size="9.5" fill="#7c2d12">↓ Triptofan metabolizması</text>
+
+          <!-- Arrow 2 -->
+          <path d="M309 70 L332 70" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+
+          <!-- Step 3: Disease Risks -->
+          <rect x="334" y="20" width="130" height="100" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="399" y="44" text-anchor="middle" font-size="11" fill="#92400e" font-weight="700">HASTALIK RİSKİ</text>
+          <text x="399" y="61" text-anchor="middle" font-size="9.5" fill="#78350f">C. diff enfeksiyonu</text>
+          <text x="399" y="74" text-anchor="middle" font-size="9.5" fill="#78350f">İltihaplı bağırsak</text>
+          <text x="399" y="87" text-anchor="middle" font-size="9.5" fill="#78350f">Obezite / Diyabet</text>
+          <text x="399" y="100" text-anchor="middle" font-size="9.5" fill="#78350f">Alerji / Astım</text>
+          <text x="399" y="113" text-anchor="middle" font-size="9.5" fill="#78350f">(+%14–40 risk)</text>
+
+          <!-- Arrow 3 -->
+          <path d="M466 70 L489 70" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+
+          <!-- Step 4: Intervention -->
+          <rect x="491" y="20" width="170" height="100" rx="10" fill="#dcfce7" stroke="#4ade80" stroke-width="1.5"/>
+          <text x="576" y="44" text-anchor="middle" font-size="11" fill="#14532d" font-weight="700">BESLENME MÜDAHALESİ</text>
+          <text x="576" y="61" text-anchor="middle" font-size="9.5" fill="#166534">✓ Yüksek lifli diyet</text>
+          <text x="576" y="74" text-anchor="middle" font-size="9.5" fill="#166534">✓ Akdeniz diyeti</text>
+          <text x="576" y="87" text-anchor="middle" font-size="9.5" fill="#166534">✓ Probiyotikler</text>
+          <text x="576" y="100" text-anchor="middle" font-size="9.5" fill="#166534">✓ Omega-3 & Polifenoller</text>
+          <text x="576" y="113" text-anchor="middle" font-size="9.5" fill="#166534">✓ Prebiyotikler</text>
+
+          <!-- Main divider line -->
+          <line x1="20" y1="155" x2="660" y2="155" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="340" y="173" text-anchor="middle" font-size="10" fill="#64748b" font-weight="600">KISA ZİNCİRLİ YAĞ ASİTLERİ (KZYA) — KRİTİK KÖPRÜ</text>
+
+          <!-- SCFA diagram -->
+          <!-- Fiber → Bacteria -->
+          <rect x="20" y="185" width="110" height="50" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+          <text x="75" y="207" text-anchor="middle" font-size="10" fill="#15803d" font-weight="600">Diyet Lifi</text>
+          <text x="75" y="222" text-anchor="middle" font-size="9" fill="#166534">Tam tahıl, baklagil</text>
+          <text x="75" y="232" text-anchor="middle" font-size="9" fill="#166534">sebze, meyve</text>
+
+          <path d="M132 210 L157 210" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+
+          <rect x="159" y="185" width="110" height="50" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+          <text x="214" y="207" text-anchor="middle" font-size="10" fill="#15803d" font-weight="600">Faydalı Bakteriler</text>
+          <text x="214" y="222" text-anchor="middle" font-size="9" fill="#166534">Firmicutes</text>
+          <text x="214" y="232" text-anchor="middle" font-size="9" fill="#166534">Bifidobacterium</text>
+
+          <path d="M271 210 L296 210" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+
+          <rect x="298" y="185" width="110" height="50" rx="8" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/>
+          <text x="353" y="204" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="600">KZYA Üretimi</text>
+          <text x="353" y="218" text-anchor="middle" font-size="9" fill="#1e3a8a">Bütirat</text>
+          <text x="353" y="229" text-anchor="middle" font-size="9" fill="#1e3a8a">Propiyonat · Asetat</text>
+
+          <path d="M410 210 L435 210" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+
+          <rect x="437" y="185" width="220" height="50" rx="8" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.5"/>
+          <text x="547" y="204" text-anchor="middle" font-size="10" fill="#4c1d95" font-weight="600">Korunan Fonksiyonlar</text>
+          <text x="547" y="218" text-anchor="middle" font-size="9" fill="#3b0764">Bağırsak bariyeri · Bağışıklık dengesi</text>
+          <text x="547" y="229" text-anchor="middle" font-size="9" fill="#3b0764">İnsülin duyarlılığı · İltihap kontrolü</text>
+
+          <!-- Bottom recommendations -->
+          <rect x="20" y="255" width="130" height="105" rx="10" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+          <text x="85" y="275" text-anchor="middle" font-size="10" fill="#6b21a8" font-weight="700">🥦 Yüksek Lifli Diyet</text>
+          <text x="85" y="292" text-anchor="middle" font-size="9" fill="#581c87">Tam tahıl, baklagil</text>
+          <text x="85" y="305" text-anchor="middle" font-size="9" fill="#581c87">Sebze ve meyveler</text>
+          <text x="85" y="318" text-anchor="middle" font-size="9" fill="#581c87">İnülin içeren besinler</text>
+          <text x="85" y="331" text-anchor="middle" font-size="9" fill="#581c87">Dirençli nişasta</text>
+          <text x="85" y="348" text-anchor="middle" font-size="9" fill="#7c3aed" font-style="italic">Proteobakteri büyümesini ↓</text>
+
+          <rect x="165" y="255" width="130" height="105" rx="10" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+          <text x="230" y="275" text-anchor="middle" font-size="10" fill="#c2410c" font-weight="700">🫒 Akdeniz Diyeti</text>
+          <text x="230" y="292" text-anchor="middle" font-size="9" fill="#9a3412">Zeytinyağı</text>
+          <text x="230" y="305" text-anchor="middle" font-size="9" fill="#9a3412">Yağlı balık (omega-3)</text>
+          <text x="230" y="318" text-anchor="middle" font-size="9" fill="#9a3412">Polifenol zengini besin</text>
+          <text x="230" y="331" text-anchor="middle" font-size="9" fill="#9a3412">Fındık / ceviz</text>
+          <text x="230" y="348" text-anchor="middle" font-size="9" fill="#ea580c" font-style="italic">Safra asidi homeostazı ↑</text>
+
+          <rect x="310" y="255" width="130" height="105" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+          <text x="375" y="275" text-anchor="middle" font-size="10" fill="#15803d" font-weight="700">🦠 Probiyotikler</text>
+          <text x="375" y="292" text-anchor="middle" font-size="9" fill="#166534">Lactobacillus türleri</text>
+          <text x="375" y="305" text-anchor="middle" font-size="9" fill="#166534">Bifidobacterium BB-12</text>
+          <text x="375" y="318" text-anchor="middle" font-size="9" fill="#166534">Saccharomyces boulardii</text>
+          <text x="375" y="331" text-anchor="middle" font-size="9" fill="#166534">Fermente ürünler</text>
+          <text x="375" y="348" text-anchor="middle" font-size="9" fill="#16a34a" font-style="italic">C. diff riskini %60 ↓</text>
+
+          <rect x="455" y="255" width="206" height="105" rx="10" fill="#fff1f2" stroke="#fda4af" stroke-width="1.5"/>
+          <text x="558" y="275" text-anchor="middle" font-size="10" fill="#9f1239" font-weight="700">🐟 Omega-3 & Polifenoller</text>
+          <text x="558" y="292" text-anchor="middle" font-size="9" fill="#881337">EPA + DHA (balık yağı)</text>
+          <text x="558" y="305" text-anchor="middle" font-size="9" fill="#881337">Çay polifenolleri</text>
+          <text x="558" y="318" text-anchor="middle" font-size="9" fill="#881337">Üzüm, çilek, kakao</text>
+          <text x="558" y="331" text-anchor="middle" font-size="9" fill="#881337">Elma kabuğu ekstraktı</text>
+          <text x="558" y="348" text-anchor="middle" font-size="9" fill="#be123c" font-style="italic">İltihabı ↓ · Bariyeri ↑</text>
+
+          <!-- Arrow marker -->
+          <defs>
+            <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#94a3b8"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+
+      <h2>Hastalık Riskleri: Sayılar Konuşuyor</h2>
+      <p>Antibiyotiğin tetiklediği disbiyoz sadece geçici bir rahatsızlık değil; uzun vadeli ciddi hastalıklar için zemin hazırlıyor:</p>
+
+      <div class="key-box">
+        <div class="key-box-title">📊 Güncel Araştırmalardan Öne Çıkan Veriler</div>
+        <ul>
+          <li><strong>İltihaplı Bağırsak (İBH):</strong> Antibiyotik kullanımı İBH riskini yaklaşık %40 artırıyor; 5+ kür alanlarda risk 2 kattan fazla (İsveç, 141.809 kişilik çalışma)</li>
+          <li><strong>C. diff Enfeksiyonu:</strong> Linkosamid (klindamisin) alan hastalarda risk 31 kat artıyor</li>
+          <li><strong>Çocukluk Çağı Obezitesi:</strong> İlk 2 yılda antibiyotik alanlar için obezite riski %14–21 daha yüksek</li>
+          <li><strong>Tip 1 Diyabet:</strong> İlk 2 yılda geniş spektrum antibiyotik kullanan çocuklarda %13–70 daha yüksek risk (doğum şekline göre değişiyor)</li>
+          <li><strong>Alerji / Astım:</strong> İlk 6 ayda antibiyotik maruziyeti astım riskini 2 kattan fazla artırıyor</li>
+        </ul>
+      </div>
+
+      <h2>Beslenmeyle Bağırsağı Onarmak Mümkün mü?</h2>
+      <p>Kısa cevap: Evet. Araştırma ekibinin incelediği beslenme stratejileri, antibiyotiğin yarattığı hasarı hem hafifletebilir hem de iyileşmeyi hızlandırabilir.</p>
+
+      <h3>🥦 Yüksek Lifli Diyet: Temel Yakıt</h3>
+      <p>Lif, fermantasyon yapan anaerob bakterilerin ana besinidir. Antibiyotik sonrasında lif miktarı artırılırsa KZYA üreten bakteriler yeniden çoğalır; bağırsak pH'ı düşer ve Proteobakteria (zararlı bakteri grubu) büyümesi baskılanır. Tam tahıllar, baklagiller, sebzeler, meyveler, inülin içeren besinler (soğan, pırasa, enginar) ve dirençli nişasta (soğutulmuş pirinç-patates) başlıca kaynaklar.</p>
+      <p>⚠️ Dikkat: Sindirim sistemi hassasiyeti olanlar lifli gıdaları yavaş yavaş artırmalı; ani artış şişkinlik yaratabilir.</p>
+
+      <h3>🫒 Akdeniz Diyeti: Bütüncül Yaklaşım</h3>
+      <p>Yalnızca lif değil, polifenol zengini bitkisel besinler, zeytinyağı ve omega-3 kaynakları da içeren bu örüntü; mikrobiom çeşitliliğini artırır, safra asidi metabolizmasını düzenler ve kronik iltihabı azaltır. Uzun vadeli yönetim için ideal.</p>
+
+      <h3>🦠 Probiyotik ve Prebiyotikler</h3>
+      <p>Meta-analizler, belirli probiyotik suşlarının antibiyotiğe bağlı ishal riskini %42 oranında azalttığını gösteriyor. <em>Bifidobacterium lactis</em> BB-12, amoksisilin tedavisi sonrasında dışkı asetat düzeylerini normalleştirdi. Öte yandan suş seçimi kritik: yanlış seçilmiş bir probiyotik endojen mikrobiyomun toparlanmasını yavaşlatabilir.</p>
+      <p>Prebiyotikler (inülin, FOS, GOS) ise hayatta kalan faydalı bakterilere besin sağlayarak KZYA üretimini destekler.</p>
+
+      <h3>🐟 Omega-3 ve Polifenoller</h3>
+      <p>EPA ve DHA (yağlı balık, balık yağı) bağırsak iltihabını yatıştırır, epiteli korur ve KZYA üreten bakterilerin büyümesini destekler. Çay polifenolleri, elma kabuğu ekstraktı ve üzüm kabuğu ise sıkı bağlantı proteinlerini onarıp TLR4/NF-κB sinyal yolunu baskılar. Her ikisi de antibiyotik sonrası dönemde umut verici destekleyici müdahaleler olarak öne çıkıyor.</p>
+
+      <div class="pullquote">
+        <p>"Beslenme müdahaleleri antibiyotiğin 'bağırsak izini' silmez, ama hasarı azaltır ve iyileşmeyi hızlandırır."</p>
+      </div>
+
+      <h2>Pratik Öneriler: Antibiyotik Kullanırken ve Sonrasında</h2>
+
+      <div class="key-box">
+        <div class="key-box-title">✅ Yapabilecekleriniz</div>
+        <ul>
+          <li>Antibiyotik kürü boyunca ve sonrasında günlük <strong>25–35 g</strong> diyet lifi hedefleyin</li>
+          <li>Yoğurt, kefir, turşu gibi <strong>fermente ürünleri</strong> rutininize ekleyin (doktor onayıyla)</li>
+          <li>Haftada 2–3 kez <strong>yağlı balık</strong> (somon, uskumru, sardalya) tüketin</li>
+          <li>Sofranızı <strong>renkli sebze ve meyvelerle</strong> çeşitlendirin (polifenol için)</li>
+          <li>Antibiyotiği gerçekten ihtiyaç duyduğunuzda ve gerçekten <strong>dar spektrumlu</strong> seçeneklerle alın</li>
+          <li>Bağırsak yakınmalarınız devam ederse bir diyetisyen veya gastroenterologdan destek alın</li>
+        </ul>
+      </div>
+
+      <h2>Sonuç</h2>
+      <p>Antibiyotikler hayat kurtarır — ancak bağırsak floranıza önemli bir fatura çıkarabilirler. Güncel bilim, bu hasarın kalıcı olmak zorunda olmadığını söylüyor. Lifli besinler, Akdeniz diyeti, probiyotikler ve omega-3 açısından zengin bir beslenme düzeni; mikrobiyomun toparlanmasını destekleyerek obezite, diyabet, alerjiler ve iltihaplı bağırsak hastalıklarına karşı koruyucu bir rol üstlenebilir.</p>
+      <p>Ancak bireysel farklılıklar büyük: herkes aynı stratejiyle aynı faydayı elde edemez. Bu nedenle antibiyotik kursu sonrası yaşanan bağırsak sorunları için kişiselleştirilmiş bir yaklaşım şart.</p>
+
+      <!-- Citation -->
+      <div class="citation-box">
+        <strong>🔬 Kaynak (PubMed):</strong><br>
+        Li X ve ark. "Dietary and nutritional strategies for reducing disease risk associated with antibiotic-induced dysbiosis." <em>Gut Microbes.</em> 2026;18(1):2728330.<br>
+        DOI: <a href="https://doi.org/10.1080/19490976.2026.2728330" target="_blank" rel="noopener">10.1080/19490976.2026.2728330</a> | PMC: PMC13596897
+      </div>
+
+    </article>
+  </div><!-- /tr -->
+
+
+  <!-- ═══ ENGLISH VERSION ═══ -->
+  <div data-lang="en">
+    <header class="article-header">
+      <div class="article-tags">
+        <span class="tag">Gut Health</span>
+        <span class="tag">Antibiotics</span>
+        <span class="tag">Microbiome</span>
+        <span class="tag">Current Research</span>
+      </div>
+      <h1 class="article-title">How Antibiotics Damage Your Gut — And What to Eat to Recover</h1>
+      <p class="article-lead">The antibiotic you take to beat an infection can trigger changes in your gut flora that last for months — sometimes years. New research reveals the critical role of nutrition in preventing this "collateral damage."</p>
+      <div class="article-meta">
+        <div class="meta-author">
+          <div class="meta-avatar">🥗</div>
+          <div>
+            <div class="meta-name">Dyt. Yunus Aksu</div>
+            <div class="meta-cred">Dietitian</div>
+          </div>
+        </div>
+        <span class="meta-divider">|</span>
+        <span class="meta-info">🗓 November 2026</span>
+        <span class="meta-divider">|</span>
+        <span class="meta-info">⏱ 6 min read</span>
+      </div>
+    </header>
+
+    <article class="article-body">
+
+      <p>Since Alexander Fleming discovered penicillin in 1928, antibiotics have become one of medicine's greatest tools — saving countless lives from pneumonia, tuberculosis, and surgical infections. But these miracle drugs carry a hidden cost: every course of antibiotics can inflict serious damage on your gut microbiome, the community of roughly 100 trillion microorganisms living inside you.</p>
+
+      <p>A comprehensive review published in <em>Gut Microbes</em> in September 2026 examines this "dysbiosis" process in depth — and what we can do about it through nutrition. Here's what the evidence shows.</p>
+
+      <div class="pullquote">
+        <p>"Some gut microbiomes never fully recover after antibiotic exposure — differences may persist for up to 12 months or beyond."</p>
+      </div>
+
+      <h2>How Antibiotics Disrupt the Gut</h2>
+      <p>Antibiotics kill infection-causing bacteria, but they inevitably harm beneficial gut bacteria too. This disruption has three major downstream consequences:</p>
+
+      <h3>1. Short-Chain Fatty Acids (SCFAs) Crash</h3>
+      <p>SCFAs — butyrate, propionate, and acetate — are produced when gut bacteria ferment dietary fiber. They nourish the colon lining, maintain tight junction proteins (your gut's "seal"), and regulate immune responses. When antibiotics wipe out SCFA-producing bacteria, production can fall by 76–90%. Less butyrate means a leakier gut, and leakier gut means systemic inflammation.</p>
+
+      <h3>2. Bile Acid Metabolism Collapses</h3>
+      <p>Broad-spectrum antibiotics eliminate bacteria that convert primary bile acids into secondary forms. Without this conversion, gut conditions become favorable for dangerous pathogens like <em>Clostridium difficile</em>. Studies show vancomycin can increase the secondary-to-primary bile acid ratio by up to 100-fold.</p>
+
+      <h3>3. Tryptophan Metabolism Disrupted</h3>
+      <p>Gut bacteria convert dietary tryptophan into "indole" compounds that protect the gut barrier and balance immunity. When antibiotics deplete these bacteria, indole production plummets. Early-life exposure to this disruption has been linked to increased asthma and allergy risk in adulthood.</p>
+
+      <!-- Infographic reference for EN -->
+      <div class="infographic-wrap" style="text-align:center; padding: 16px">
+        <div class="infographic-title">SEE INFOGRAPHIC ABOVE: ANTIBIOTICS → DYSBIOSIS → DISEASE RISK → NUTRITION STRATEGIES</div>
+        <p style="font-size:.85rem; color:var(--text-muted); margin:0">↑ Scroll up to view the full visual summary</p>
+      </div>
+
+      <h2>Disease Risks: What the Numbers Show</h2>
+      <p>Antibiotic-induced dysbiosis is not a temporary inconvenience. It creates long-term fertile ground for serious diseases:</p>
+
+      <div class="key-box">
+        <div class="key-box-title">📊 Key Findings from Recent Research</div>
+        <ul>
+          <li><strong>Inflammatory Bowel Disease:</strong> Antibiotic use increases IBD risk by ~40%; 5+ courses more than doubles it (Swedish study, 141,809 participants)</li>
+          <li><strong>C. diff Infection:</strong> Lincosamides (clindamycin) raise CDI risk 31-fold</li>
+          <li><strong>Childhood Obesity:</strong> Antibiotic exposure in first 2 years of life raises obesity risk by 14–21%</li>
+          <li><strong>Type 1 Diabetes:</strong> Broad-spectrum antibiotics in infancy raise T1D risk 13–70% (varies by delivery mode)</li>
+          <li><strong>Allergies / Asthma:</strong> Exposure before 6 months more than doubles childhood asthma risk</li>
+        </ul>
+      </div>
+
+      <h2>Can Nutrition Repair the Gut?</h2>
+      <p>Short answer: yes. The nutritional strategies reviewed by researchers can both dampen the damage and accelerate recovery.</p>
+
+      <h3>🥦 High-Fiber Diet: The Foundation</h3>
+      <p>Fiber is the primary substrate for anaerobic bacteria that produce SCFAs. Increasing fiber intake after antibiotics allows surviving beneficial bacteria to multiply; it lowers intestinal pH and suppresses the overgrowth of Proteobacteria (the "troublemaker" bacterial group that thrives post-antibiotics). Key sources: whole grains, legumes, vegetables, fruits, inulin-rich foods (onion, leek, artichoke), and resistant starch (cooled rice or potatoes).</p>
+      <p>⚠️ Note: Those with sensitive digestion should increase fiber gradually — too fast can cause bloating.</p>
+
+      <h3>🫒 Mediterranean Diet: Holistic Recovery</h3>
+      <p>Beyond fiber, this eating pattern delivers polyphenol-rich plant foods, olive oil, and omega-3 sources — collectively increasing microbiome diversity, regulating bile acid metabolism, and reducing chronic inflammation. It's the best option for long-term management after antibiotic courses.</p>
+
+      <h3>🦠 Probiotics and Prebiotics</h3>
+      <p>Meta-analyses show specific probiotic formulations can cut antibiotic-associated diarrhea risk by 42%. <em>Bifidobacterium lactis</em> BB-12 helped restore fecal acetate levels after amoxicillin treatment. Critically, strain selection matters: the wrong probiotic can actually delay endogenous microbiome recovery.</p>
+      <p>Prebiotics (inulin, FOS, GOS) provide substrate for surviving beneficial bacteria, supporting SCFA production and helping restore bile acid balance.</p>
+
+      <h3>🐟 Omega-3 and Polyphenols</h3>
+      <p>EPA and DHA (from fatty fish and fish oil) reduce gut inflammation, protect the epithelium, and support growth of SCFA-producing bacteria. Tea polyphenols, apple peel extracts, and grape/berry compounds repair tight junction proteins and suppress inflammatory TLR4/NF-κB signaling. Both are promising adjunct interventions for post-antibiotic recovery.</p>
+
+      <div class="pullquote">
+        <p>"Nutritional interventions won't erase the antibiotic's 'gut imprint' — but they can reduce the damage and accelerate healing."</p>
+      </div>
+
+      <h2>Practical Steps: During and After Antibiotics</h2>
+
+      <div class="key-box">
+        <div class="key-box-title">✅ What You Can Do</div>
+        <ul>
+          <li>Aim for <strong>25–35 g of dietary fiber</strong> daily during and after antibiotic courses</li>
+          <li>Add <strong>fermented foods</strong> — yogurt, kefir, pickled vegetables — to your routine (consult your doctor)</li>
+          <li>Eat <strong>fatty fish</strong> (salmon, mackerel, sardines) 2–3 times per week</li>
+          <li>Diversify your plate with <strong>colorful vegetables and fruits</strong> for polyphenols</li>
+          <li>When antibiotics are necessary, ask for the <strong>narrowest spectrum</strong> option</li>
+          <li>If gut symptoms persist after antibiotic treatment, consult a dietitian or gastroenterologist</li>
+        </ul>
+      </div>
+
+      <h2>Bottom Line</h2>
+      <p>Antibiotics save lives — but they can send your gut flora a significant bill. The good news from current science: this damage doesn't have to be permanent. A diet rich in fiber, aligned with Mediterranean principles, and supported by probiotics, prebiotics, and omega-3s can support microbiome recovery and help reduce long-term risks of obesity, diabetes, allergies, and inflammatory bowel disease.</p>
+      <p>Individual variability is real, though: the same strategy may not yield the same benefit for everyone. Personalized guidance is key if you experience persistent gut symptoms after a course of antibiotics.</p>
+
+      <!-- Citation -->
+      <div class="citation-box">
+        <strong>🔬 Source (Based on PubMed article):</strong><br>
+        Li X et al. "Dietary and nutritional strategies for reducing disease risk associated with antibiotic-induced dysbiosis." <em>Gut Microbes.</em> 2026;18(1):2728330.<br>
+        DOI: <a href="https://doi.org/10.1080/19490976.2026.2728330" target="_blank" rel="noopener">10.1080/19490976.2026.2728330</a> | PMC: PMC13596897
+      </div>
+
+    </article>
+  </div><!-- /en -->
+
+
+  <!-- Newsletter CTA (shared) -->
+  <div class="newsletter-cta">
+    <h3 id="nl-heading">Her Hafta Yeni Bir Araştırma</h3>
+    <p id="nl-sub">Kanıta dayalı beslenme bilgilerini doğrudan gelen kutunuza alın.</p>
+    <form method="POST" action="https://9237d74e.sibforms.com/serve/MUIFAAui1owcltlK9E6Oy2ug2KWv78be_EwMSUiDvNMfqAj2T9bhcN0d0fwqKbS9p93bhfw6pQnLZnOKRaPy9kn10h0rk4Wwfk0DgaxhbszQNaSdnoDcioSBjBuNVvHR2KUW7LaFvLPkqxpZZInezd_bh8h1EVZ3YGTh7xjS6ZPsJl73Y4hQQlzoKl8SKqGHrnriS29GT3uU5se1RQ==" class="nl-form">
+      <input type="text" name="EMAIL" autocomplete="off" value="" id="nl-email" placeholder="e-posta adresiniz" required>
+      <input type="text" name="email_address_check" value="" style="display:none">
+      <input type="hidden" name="locale" value="tr">
+      <input type="hidden" name="html_type" value="simple">
+      <input type="hidden" name="redirectionUrl" value="https://diyetisyenyunusaksu.com/?abone=1">
+      <button type="submit" class="btn-primary" id="nl-btn">Abone Ol</button>
+    </form>
+  </div>
+
+  <!-- Footer nav -->
+  <div class="article-footer">
+    <a href="https://diyetisyenyunusaksu.com/#blog" class="back-link">
+      ← <span id="back-text">Tüm Yazılar</span>
+    </a>
+    <span class="footer-share" id="share-text">Bu yazıyı paylaşın: diyetisyenyunusaksu.com</span>
+  </div>
+
+</div><!-- /article-container -->
+
+<!-- Site Footer -->
+<footer class="site-footer">
+  <p>© 2026 <a href="https://diyetisyenyunusaksu.com">Diyetisyen Yunus Aksu</a> · Ankara Üniversitesi · <a href="mailto:yaksu@ankara.edu.tr">yaksu@ankara.edu.tr</a></p>
+</footer>
+
+<script>
+// Language toggle
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('visible', el.dataset.lang === lang);
+  });
+  document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.documentElement.lang = lang;
+
+  // Update shared UI elements
+  if (lang === 'en') {
+    document.getElementById('nl-heading').textContent = 'A New Research Article Every Week';
+    document.getElementById('nl-sub').textContent = 'Get evidence-based nutrition insights delivered to your inbox.';
+    document.getElementById('nl-email').placeholder = 'your e-mail address';
+    document.getElementById('nl-btn').textContent = 'Subscribe';
+    document.getElementById('back-text').textContent = 'All Articles';
+    document.getElementById('share-text').textContent = 'Share this article: diyetisyenyunusaksu.com';
+    document.querySelector('[data-lang="tr"].visible .hero-caption, .hero-caption') && null;
+  } else {
+    document.getElementById('nl-heading').textContent = 'Her Hafta Yeni Bir Araştırma';
+    document.getElementById('nl-sub').textContent = 'Kanıta dayalı beslenme bilgilerini doğrudan gelen kutunuza alın.';
+    document.getElementById('nl-email').placeholder = 'e-posta adresiniz';
+    document.getElementById('nl-btn').textContent = 'Abone Ol';
+    document.getElementById('back-text').textContent = 'Tüm Yazılar';
+    document.getElementById('share-text').textContent = 'Bu yazıyı paylaşın: diyetisyenyunusaksu.com';
+  }
+
+  // Remember preference
+  try { localStorage.setItem('lang', lang); } catch(e){}
+}
+
+// Restore saved language
+try {
+  const saved = localStorage.getItem('lang');
+  if (saved && saved !== 'tr') setLang(saved);
+} catch(e) {}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+</script>
+
+</body>
+</html>
