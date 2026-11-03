@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antrenman Zamanlaması ve Beslenme — Yunus Aksu</title>
+<meta name="description" content="Antrenman öncesi, sırası ve sonrasında ne yemeli? Spor beslenmesinde zamanlama bilimini öğrenin.">
+<link rel="canonical" href="https://diyetisyenyunusaksu.com/antrenman-beslenmesi.html">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{--bg:#FAFAF8;--card:#FFFFFF;--text:#1A1A18;--text-soft:#3D3D38;--text-muted:#7A7A72;--border:#E8E8E2;--accent:#B07D1A;--accent-bg:#FDF8EE;--tag-bg:#FDF8EE;--tag-text:#7A5510;--code-bg:#F4F4F0;}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141412;--card:#1E1E1B;--text:#EDEDE8;--text-soft:#BDBDB5;--text-muted:#7A7A72;--border:#2E2E2A;--accent:#D4A84B;--accent-bg:#1E1A0A;--tag-bg:#1E1A0A;--tag-text:#E8CC80;--code-bg:#1A1A17;color-scheme:dark;}}
+:root[data-theme="dark"]{--bg:#141412;--card:#1E1E1B;--text:#EDEDE8;--text-soft:#BDBDB5;--text-muted:#7A7A72;--border:#2E2E2A;--accent:#D4A84B;--accent-bg:#1E1A0A;--tag-bg:#1E1A0A;--tag-text:#E8CC80;--code-bg:#1A1A17;color-scheme:dark;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
+img{max-width:100%;display:block;}
+.nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:14px max(20px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.nav-home{font-weight:600;color:var(--text);font-size:0.95rem;}.nav-home:hover{text-decoration:none;color:var(--accent);}
+.lang-toggle{display:flex;border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+.lang-btn{padding:4px 12px;font-size:0.78rem;font-weight:600;background:none;border:none;cursor:pointer;color:var(--text-muted);}
+.lang-btn.active{background:var(--accent);color:#fff;}
+.hero{width:100%;aspect-ratio:16/7;overflow:hidden;position:relative;}
+.hero img{width:100%;height:100%;object-fit:cover;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,0.5));}
+.container{max-width:740px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left,0px));}
+.post-header{padding:48px 0 32px;}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--tag-text);font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:16px;}
+.post-title{font-family:'Lora',serif;font-size:clamp(1.75rem,4vw,2.4rem);font-weight:600;line-height:1.25;text-wrap:balance;margin-bottom:18px;}
+.post-meta{display:flex;align-items:center;gap:8px;color:var(--text-muted);font-size:0.85rem;flex-wrap:wrap;margin-bottom:8px;}
+.post-meta-dot{opacity:0.4;}
+.author-line{font-size:0.85rem;color:var(--text-muted);padding-bottom:28px;border-bottom:1px solid var(--border);}
+.author-line strong{color:var(--text-soft);}
+.post-body{padding:36px 0;}
+.post-body h2{font-family:'Lora',serif;font-size:1.4rem;font-weight:600;margin:40px 0 14px;}
+.post-body h3{font-size:1.05rem;font-weight:700;margin:28px 0 10px;}
+.post-body p{color:var(--text-soft);margin-bottom:18px;}
+.post-body ul,.post-body ol{color:var(--text-soft);padding-left:22px;margin-bottom:18px;}
+.post-body li{margin-bottom:6px;}
+.post-body strong{color:var(--text);}
+.timeline{display:flex;flex-direction:column;gap:0;margin:28px 0;}
+.timeline-item{display:flex;gap:16px;position:relative;}
+.timeline-item:not(:last-child)::before{content:'';position:absolute;left:19px;top:40px;bottom:0;width:2px;background:var(--border);}
+.timeline-dot{width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;}
+.timeline-content{padding:8px 0 24px;}
+.timeline-content h3{margin:0 0 6px;font-size:1rem;font-weight:700;}
+.timeline-content p{margin:0;font-size:0.9rem;color:var(--text-soft);}
+.highlight{background:var(--accent-bg);border-left:3px solid var(--accent);border-radius:8px;padding:16px 20px;margin:24px 0;}
+.highlight p{color:var(--text-soft);margin:0;font-size:0.95rem;}
+.citation-box{background:var(--code-bg);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:40px 0 0;}
+.citation-box .citation-label{font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;}
+.citation-box p{font-size:0.85rem;color:var(--text-soft);margin:0;line-height:1.6;}
+.newsletter-section{background:var(--accent-bg);border-radius:16px;padding:36px 28px;margin:52px 0;text-align:center;}
+.newsletter-section h3{font-family:'Lora',serif;font-size:1.2rem;margin-bottom:8px;}
+.newsletter-section p{color:var(--text-muted);font-size:0.9rem;margin-bottom:20px;}
+.newsletter-form{display:flex;gap:8px;max-width:420px;margin:0 auto;flex-wrap:wrap;justify-content:center;}
+.newsletter-form input[type="email"]{flex:1;min-width:200px;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:0.9rem;background:var(--card);color:var(--text);}
+.newsletter-form button{padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-weight:600;font-size:0.9rem;cursor:pointer;}
+.post-footer{border-top:1px solid var(--border);padding:36px 0 60px;margin-top:40px;}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;font-size:0.9rem;}
+[data-lang]{display:none;}[data-lang].visible{display:block;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-home">← diyetisyenyunusaksu.com</a>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-tr" onclick="setLang('tr')">TR</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<div class="hero">
+  <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1400&auto=format&fit=crop&q=80" alt="Spor ve beslenme">
+  <div class="hero-overlay"></div>
+</div>
+
+<div class="container">
+
+  <div data-lang="tr" class="visible">
+    <header class="post-header">
+      <span class="tag">Spor Beslenmesi</span>
+      <h1 class="post-title">Antrenman Öncesi, Sırası ve Sonrası Beslenme: Bilimsel Zamanlama Rehberi</h1>
+      <div class="post-meta"><span>10 Ekim 2026</span><span class="post-meta-dot">·</span><span>7 dk okuma</span></div>
+      <p class="author-line">Yazan: <strong>Uzm. Dyt. Yunus Aksu</strong></p>
+    </header>
+    <article class="post-body">
+      <p>"Ne yemeli?" sorusunu pek çok sporcu doğru yanıtlıyor. Ama "ne zaman yemeli?" sorusu çoğu zaman geri planda kalıyor. Besin zamanlaması, antrenman performansı ve toparlanma üzerinde ciddi fark yaratabilecek bir stratejidir.</p>
+      <p>Bu yazıda uluslararası spor beslenmesi derneklerinin (ISSN, ACSM) güncel görüşleri ve bilimsel literatür ışığında antrenman beslenme zamanlamasını açıklıyorum.</p>
+
+      <h2>Antrenman Beslenme Zamanlaması</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-content">
+            <h3>🍽️ 2–3 Saat Önce: Tam Öğün</h3>
+            <p>Sindirim için yeterli süre tanıyan, karbonhidrat ağırlıklı, orta düzeyde protein, az yağ ve lif içeren bir öğün. Örnek: Tavuklu makarna, pirinç + sebze + tavuk, tam tahıllı sandviç. Hedef: glikojen depolarını doldurmak ve antrenman boyunca enerji sağlamak.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-content">
+            <h3>⚡ 30–60 Dakika Önce: Hafif Ara Öğün</h3>
+            <p>Tam öğün mümkün değilse ya da sabah erken antrenman yapıyorsanız: muz, hurma, pirinç keki veya küçük bir meyve. Hızlı sindirilen karbonhidrat + az protein. Çok lif veya yağ → mide rahatsızlığı riski.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-content">
+            <h3>💧 Antrenman Sırası: Hidrasyon + Karbonhidrat</h3>
+            <p>60 dakikanın altında antrenmanlar için su yeterlidir. 60–90 dakikayı aşan egzersizlerde 30–60 g karbonhidrat/saat (enerji jeli, muz, spor içeceği) toparlanmayı destekler. Her 15–20 dakikada 150–250 ml su içmeyi hedefleyin.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-content">
+            <h3>🔄 0–2 Saat Sonra: Toparlanma Öğünü</h3>
+            <p>Kas protein sentezi antrenman sonrası 24–48 saat boyunca artar; ancak ilk 2 saat anabolik pencere açısından kritiktir. Hedef: 20–40 g yüksek kaliteli protein + karbonhidrat. Örnek: Yoğurt + meyve, pirinç + tavuk, protein tozu + süt.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Anabolik Pencere Gerçekten Önemli mi?</h2>
+      <p>Uzun yıllar "anabolik pencere" (antrenmandan hemen sonraki 30–45 dakika) oldukça dar tutulmuştu. Güncel araştırmalar bu pencereyi genişletmiştir: Antrenman öncesinde yeterli protein alındığında, antrenman sonrası 2 saat içinde protein almak yeterlidir. Yani çantanızda protein barı taşımak zorunlu değil — makul süre içinde tam bir öğün de işe yarar.</p>
+
+      <div class="highlight">
+        <p>⚡ <strong>Pratik ipucu:</strong> Sabah 6'da antrenman yapıyorsanız ve kahvaltı yapamıyorsanız: 1 muz + 1 çay kaşığı fıstık ezmesi antrenman öncesi, antrenman sonrası ise bir kase yoğurt + granola + meyve idealdir.</p>
+      </div>
+
+      <h2>Karbonhidrat: Performansın Yakıtı</h2>
+      <p>Karbonhidrat kısıtlama modası ne kadar sürer bilinmez; ama karbonhidratın egzersiz performansındaki önemi tartışmasızdır. Karaciğer ve kas glikojen depoları, yüksek yoğunluklu egzersizin birincil yakıt kaynağıdır. Bu depoları antrenman öncesi doldurmamak → erken yorgunluk, düşen performans.</p>
+
+      <h2>Protein Dağılımı: Eşit Bölün</h2>
+      <p>Günlük toplam protein alımı kadar, bu alımın gün içine nasıl yayıldığı da önemlidir. Araştırmalar, günlük proteinin <strong>3–5 öğüne eşit biçimde dağıtılmasının</strong> (her öğünde ~20–40 g), tamamının tek seferde tüketilmesinden daha iyi kas protein sentezi sağladığını göstermektedir.</p>
+
+      <div class="citation-box">
+        <div class="citation-label">Kaynaklar</div>
+        <p>Jäger R. et al. (2017). International Society of Sports Nutrition Position Stand: protein and exercise. JISSN. | Thomas DT. et al. (2016). Position of the Academy of Nutrition and Dietetics, DC, and ACSM: Nutrition and Athletic Performance. JAND. | Kerksick CM. et al. (2017). ISSN exercise and sports nutrition review update. JISSN.</p>
+      </div>
+    </article>
+  </div>
+
+  <div data-lang="en">
+    <header class="post-header">
+      <span class="tag">Sports Nutrition</span>
+      <h1 class="post-title">Pre-, During, and Post-Workout Nutrition: A Science-Based Timing Guide</h1>
+      <div class="post-meta"><span>October 10, 2026</span><span class="post-meta-dot">·</span><span>7 min read</span></div>
+      <p class="author-line">By: <strong>Yunus Aksu, RD, MSc</strong></p>
+    </header>
+    <article class="post-body">
+      <p>Many athletes answer "what to eat?" correctly. But "when to eat?" often gets left behind. Nutrient timing is a strategy that can make a real difference to training performance and recovery.</p>
+      <p>Here I explain workout nutrition timing based on current positions from international sports nutrition bodies (ISSN, ACSM) and the scientific literature.</p>
+
+      <h2>The Workout Nutrition Timeline</h2>
+      <p><strong>2–3 hours before:</strong> A full meal — carbohydrate-rich, moderate protein, low fat and fibre. Goal: top up glycogen stores and ensure sustained energy. Examples: pasta with chicken, rice + vegetables + chicken, wholegrain sandwich.</p>
+      <p><strong>30–60 minutes before:</strong> If a full meal isn't possible (early morning training): banana, dates, rice cake, or a small piece of fruit. Fast-digesting carbs + a little protein. Too much fibre or fat = risk of GI distress.</p>
+      <p><strong>During:</strong> Water is enough for sessions under 60 minutes. For 60–90+ minutes, 30–60 g carbohydrate/hour (energy gel, banana, sports drink) supports performance. Aim for 150–250 ml of water every 15–20 minutes.</p>
+      <p><strong>0–2 hours after:</strong> Muscle protein synthesis is elevated for 24–48 hours post-workout, but the first 2 hours are critical. Target: 20–40 g high-quality protein + carbohydrate. Examples: yoghurt + fruit, rice + chicken, protein powder + milk.</p>
+
+      <h2>Is the Anabolic Window Real?</h2>
+      <p>The "anabolic window" used to be thought of as a narrow 30–45 minutes post-workout. More recent research has expanded this: when adequate protein is consumed before training, consuming protein within 2 hours after is sufficient. A proper meal within a reasonable time window works just as well as an immediate protein shake.</p>
+
+      <div class="highlight">
+        <p>⚡ <strong>Practical tip:</strong> Training at 6am and can't eat breakfast first? A banana + a teaspoon of peanut butter before, and a bowl of yoghurt + granola + fruit after, is an ideal combination.</p>
+      </div>
+
+      <h2>Protein Distribution: Spread It Out</h2>
+      <p>Not only the total daily protein intake matters — so does how it's spread across the day. Research shows that <strong>distributing protein equally across 3–5 meals</strong> (~20–40 g per meal) produces better muscle protein synthesis than consuming the same total in one or two large servings.</p>
+
+      <div class="citation-box">
+        <div class="citation-label">References</div>
+        <p>Jäger R. et al. (2017). ISSN Position Stand: protein and exercise. JISSN. | Thomas DT. et al. (2016). Position of the AND, DC, and ACSM: Nutrition and Athletic Performance. JAND. | Kerksick CM. et al. (2017). ISSN exercise and sports nutrition review update. JISSN.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="newsletter-section">
+    <div data-lang="tr" class="visible"><h3>Haftalık Beslenme Bülteni</h3><p>Yeni yazıları kaçırmamak için abone olun.</p></div>
+    <div data-lang="en"><h3>Weekly Nutrition Newsletter</h3><p>Subscribe to stay updated on new posts.</p></div>
+    <form method="POST" action="https://9237d74e.sibforms.com/serve/MUIFAAui1owcltlK9E6Oy2ug2KWv78be_EwMSUiDvNMfqAj2T9bhcN0d0fwqKbS9p93bhfw6pQnLZnOKRaPy9kn10h0rk4Wwfk0DgaxhbszQNaSdnoDcioSBjBuNVvHR2KUW7LaFvLPkqxpZZInezd_bh8h1EVZ3YGTh7xjS6ZPsJl73Y4hQQlzoKl8SKqGHrnriS29GT3uU5se1RQ==" class="newsletter-form">
+      <input type="text" name="email_address_check" value="" style="display:none">
+      <input type="hidden" name="locale" value="tr">
+      <input type="hidden" name="html_type" value="simple">
+      <input type="email" name="EMAIL" required placeholder="e-posta adresiniz">
+      <button type="submit">Abone Ol</button>
+    </form>
+  </div>
+  <div class="post-footer">
+    <a href="index.html" class="back-link">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      <span data-lang="tr" class="visible">Ana sayfaya dön</span>
+      <span data-lang="en">Back to home</span>
+    </a>
+  </div>
+</div>
+<script>
+function setLang(lang){
+  document.querySelectorAll('[data-lang]').forEach(el=>el.classList.toggle('visible',el.dataset.lang===lang));
+  document.getElementById('btn-tr').classList.toggle('active',lang==='tr');
+  document.getElementById('btn-en').classList.toggle('active',lang==='en');
+  document.documentElement.lang=lang;
+}
+</script>
+</body>
+</html>

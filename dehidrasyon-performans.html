@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dehidrasyon ve Performans — Yunus Aksu</title>
+<meta name="description" content="Vücut ağırlığının yalnızca %2'si oranındaki su kaybı performansı düşürür. Hidrasyon bilimi ve pratik öneriler.">
+<link rel="canonical" href="https://diyetisyenyunusaksu.com/dehidrasyon-performans.html">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{--bg:#FAFAF8;--card:#FFFFFF;--text:#1A1A18;--text-soft:#3D3D38;--text-muted:#7A7A72;--border:#E8E8E2;--accent:#1A6B9A;--accent-bg:#EEF6FC;--tag-bg:#EEF6FC;--tag-text:#0D4E72;--code-bg:#F4F4F0;}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141412;--card:#1E1E1B;--text:#EDEDE8;--text-soft:#BDBDB5;--text-muted:#7A7A72;--border:#2E2E2A;--accent:#4EA8D4;--accent-bg:#0A1E2A;--tag-bg:#0A1E2A;--tag-text:#80CCEE;--code-bg:#1A1A17;color-scheme:dark;}}
+:root[data-theme="dark"]{--bg:#141412;--card:#1E1E1B;--text:#EDEDE8;--text-soft:#BDBDB5;--text-muted:#7A7A72;--border:#2E2E2A;--accent:#4EA8D4;--accent-bg:#0A1E2A;--tag-bg:#0A1E2A;--tag-text:#80CCEE;--code-bg:#1A1A17;color-scheme:dark;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
+img{max-width:100%;display:block;}
+.nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:14px max(20px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.nav-home{font-weight:600;color:var(--text);font-size:0.95rem;}.nav-home:hover{text-decoration:none;color:var(--accent);}
+.lang-toggle{display:flex;border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+.lang-btn{padding:4px 12px;font-size:0.78rem;font-weight:600;background:none;border:none;cursor:pointer;color:var(--text-muted);}
+.lang-btn.active{background:var(--accent);color:#fff;}
+.hero{width:100%;aspect-ratio:16/7;overflow:hidden;position:relative;}
+.hero img{width:100%;height:100%;object-fit:cover;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,0.5));}
+.container{max-width:740px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left,0px));}
+.post-header{padding:48px 0 32px;}
+.tag{display:inline-block;background:var(--tag-bg);color:var(--tag-text);font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:16px;}
+.post-title{font-family:'Lora',serif;font-size:clamp(1.75rem,4vw,2.4rem);font-weight:600;line-height:1.25;text-wrap:balance;margin-bottom:18px;}
+.post-meta{display:flex;align-items:center;gap:8px;color:var(--text-muted);font-size:0.85rem;flex-wrap:wrap;margin-bottom:8px;}
+.post-meta-dot{opacity:0.4;}
+.author-line{font-size:0.85rem;color:var(--text-muted);padding-bottom:28px;border-bottom:1px solid var(--border);}
+.author-line strong{color:var(--text-soft);}
+.post-body{padding:36px 0;}
+.post-body h2{font-family:'Lora',serif;font-size:1.4rem;font-weight:600;margin:40px 0 14px;}
+.post-body h3{font-size:1.05rem;font-weight:700;margin:28px 0 10px;}
+.post-body p{color:var(--text-soft);margin-bottom:18px;}
+.post-body ul,.post-body ol{color:var(--text-soft);padding-left:22px;margin-bottom:18px;}
+.post-body li{margin-bottom:6px;}
+.post-body strong{color:var(--text);}
+.dehydration-scale{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:28px 0;}
+.scale-row{display:flex;align-items:center;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);}
+.scale-row:last-child{border-bottom:none;}
+.scale-pct{font-size:1.1rem;font-weight:700;color:var(--accent);min-width:48px;}
+.scale-desc{font-size:0.88rem;color:var(--text-soft);}
+.scale-row.severe .scale-pct{color:#B5535A;}
+.scale-row.moderate .scale-pct{color:#D4A84B;}
+.urine-chart{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin:28px 0;}
+.urine-title{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);margin-bottom:14px;}
+.urine-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.urine-color{width:48px;height:20px;border-radius:4px;}
+.urine-label{font-size:0.85rem;color:var(--text-soft);}
+.highlight{background:var(--accent-bg);border-left:3px solid var(--accent);border-radius:8px;padding:16px 20px;margin:24px 0;}
+.highlight p{color:var(--text-soft);margin:0;font-size:0.95rem;}
+.citation-box{background:var(--code-bg);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:40px 0 0;}
+.citation-box .citation-label{font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;}
+.citation-box p{font-size:0.85rem;color:var(--text-soft);margin:0;line-height:1.6;}
+.newsletter-section{background:var(--accent-bg);border-radius:16px;padding:36px 28px;margin:52px 0;text-align:center;}
+.newsletter-section h3{font-family:'Lora',serif;font-size:1.2rem;margin-bottom:8px;}
+.newsletter-section p{color:var(--text-muted);font-size:0.9rem;margin-bottom:20px;}
+.newsletter-form{display:flex;gap:8px;max-width:420px;margin:0 auto;flex-wrap:wrap;justify-content:center;}
+.newsletter-form input[type="email"]{flex:1;min-width:200px;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:0.9rem;background:var(--card);color:var(--text);}
+.newsletter-form button{padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-weight:600;font-size:0.9rem;cursor:pointer;}
+.post-footer{border-top:1px solid var(--border);padding:36px 0 60px;margin-top:40px;}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;font-size:0.9rem;}
+[data-lang]{display:none;}[data-lang].visible{display:block;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-home">← diyetisyenyunusaksu.com</a>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-tr" onclick="setLang('tr')">TR</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<div class="hero">
+  <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&auto=format&fit=crop&q=80" alt="Su içen sporcu">
+  <div class="hero-overlay"></div>
+</div>
+
+<div class="container">
+
+  <div data-lang="tr" class="visible">
+    <header class="post-header">
+      <span class="tag">Spor Beslenmesi</span>
+      <h1 class="post-title">Dehidrasyon ve Performans: %2 Su Kaybının Yarattığı Büyük Fark</h1>
+      <div class="post-meta"><span>26 Eylül 2026</span><span class="post-meta-dot">·</span><span>6 dk okuma</span></div>
+      <p class="author-line">Yazan: <strong>Uzm. Dyt. Yunus Aksu</strong></p>
+    </header>
+    <article class="post-body">
+      <p>Su, insan vücudunun kütlece en büyük bileşeni — yaklaşık %60. Ama sporcular ve aktif bireyler açısından daha çarpıcı bir gerçek var: Vücut ağırlığının yalnızca <strong>%2'si oranındaki su kaybı</strong>, aerobik kapasiteyi %10–20, bilişsel performansı ise %20–30 düşürebilir. Bu, bir koşu bandında fark etmediğiniz ama yarış anında kader belirleyebilecek bir kayıptır.</p>
+
+      <h2>Dehidrasyon Nasıl Performansı Etkiler?</h2>
+      <p>Su kaybı çok sayıda fizyolojik mekanizmayı etkiler. Kan hacmi azalır, kalp daha sık atmak zorunda kalır (kardiyak drift), kasların oksijen taşıma kapasitesi düşer, kas kasılmaları yavaşlar ve koordinasyon bozulur. Termoregülasyon mekanizmaları da aksar — özellikle sıcak ortamlarda bu ısı çarpmasına zemin hazırlayabilir.</p>
+
+      <div class="dehydration-scale">
+        <div class="scale-row">
+          <div class="scale-pct">%1</div>
+          <div class="scale-desc">Hafif susuzluk hissi, dikkat azalması başlar</div>
+        </div>
+        <div class="scale-row moderate">
+          <div class="scale-pct">%2</div>
+          <div class="scale-desc">Aerobik performans %10–20 düşer, baş ağrısı, konsantrasyon güçlüğü</div>
+        </div>
+        <div class="scale-row moderate">
+          <div class="scale-pct">%3–4</div>
+          <div class="scale-desc">Belirgin kas zayıflığı, yorgunluk, egzersiz kapasitesinde ciddi düşüş</div>
+        </div>
+        <div class="scale-row severe">
+          <div class="scale-pct">%5+</div>
+          <div class="scale-desc">Tıbbi acil — bulantı, baş dönmesi, ısı yorgunluğu, bilinç bozuklukları</div>
+        </div>
+      </div>
+
+      <h2>İdrar Rengini Okuyun</h2>
+      <p>Hidrasyon durumunu değerlendirmenin en pratik yolu idrar rengidir. Renk ne kadar açıksa o kadar iyi hidrasyona işaret eder:</p>
+
+      <div class="urine-chart">
+        <div class="urine-title">💧 İdrar Renk Skalası</div>
+        <div class="urine-row"><div class="urine-color" style="background:#FFF8DC;border:1px solid #E0D890;"></div><div class="urine-label">Soluk sarı / Limonata → Optimal hidrasyon ✓</div></div>
+        <div class="urine-row"><div class="urine-color" style="background:#FFE066;"></div><div class="urine-label">Orta sarı → Kabul edilebilir, biraz daha su iç</div></div>
+        <div class="urine-row"><div class="urine-color" style="background:#D4A017;"></div><div class="urine-label">Koyu sarı → Dehidrasyon başlangıcı</div></div>
+        <div class="urine-row"><div class="urine-color" style="background:#8B6914;"></div><div class="urine-label">Kehribar rengi → Ciddi dehidrasyon — hemen su iç</div></div>
+      </div>
+
+      <h2>Ne Kadar Su Gerekiyor?</h2>
+      <p>Standart "günde 8 bardak" önerisi aşırı basitleştirilmiş. Gerçek ihtiyaç: <strong>vücut ağırlığı × 30–35 ml</strong> (70 kg için yaklaşık 2,1–2,5 litre). Fiziksel aktivite eklendiğinde bu miktar önemli ölçüde artar.</p>
+      <ul>
+        <li>Her saat egzersiz için ek 500–800 ml su</li>
+        <li>Terleme ile kaybedilen tuz için uzun egzersizlerde (>60 dk) elektrolit desteği</li>
+        <li>Sıcak hava, nem ve rakım ihtiyacı artırır</li>
+        <li>Kafein içeren içecekler (kahve, çay) orta miktarda tüketildiğinde net hidrasyon katkısı sağlar</li>
+      </ul>
+
+      <h2>Spor İçecekleri Ne Zaman Gerekli?</h2>
+      <p>60 dakikanın altında süreli egzersizlerde su yeterlidir. 60–90 dakikayı aşan, yoğun terle seyreden ya da sıcak ortamda yapılan egzersizlerde izotonik spor içecekleri — sodyum, potasyum, karbonhidrat içeren — fark yaratabilir. Sodyum, su tutulumunu artırır ve içme isteğini destekler.</p>
+
+      <div class="highlight">
+        <p>💧 <strong>Antrenman öncesi strateji:</strong> Antrenmandan 2–4 saat önce 400–600 ml su için. Saat başı idrar rengini kontrol edin — 30 dakika öncesinde de açık renkli idrar istiyorsunuz. Antrenman sırasında her 15–20 dakikada 150–250 ml su içmeyi hedefleyin.</p>
+      </div>
+
+      <h2>Aşırı Hidrasyon: Hiponatremi Riski</h2>
+      <p>Fazla su da sorun olabilir. Maraton, ultra-trail ve uzun süreli dayanıklılık sporlarında çok miktarda düşük-sodyumlu sıvı tüketimi hiponatremiye (kan sodyumunun tehlikeli ölçüde düşmesine) yol açabilir. Bu durum baş ağrısı, bulantı, konfüzyon ve ağır vakalarda hayatı tehdit eden beyin ödemine neden olabilir. Susuzluk hissinizi rehber alın ve elektrolit dengesine dikkat edin.</p>
+
+      <div class="citation-box">
+        <div class="citation-label">Kaynaklar</div>
+        <p>Cheuvront SN, Kenefick RW. (2014). Dehydration: Physiology, Assessment, and Performance Effects. Comprehensive Physiology. | Casa DJ. et al. (2019). National Athletic Trainers' Association Position Statement: Fluid Replacement for the Physically Active. Journal of Athletic Training. | Sawka MN. et al. (2007). Exercise and Fluid Replacement. Medicine & Science in Sports & Exercise.</p>
+      </div>
+    </article>
+  </div>
+
+  <div data-lang="en">
+    <header class="post-header">
+      <span class="tag">Sports Nutrition</span>
+      <h1 class="post-title">Dehydration and Performance: The Big Impact of Just 2% Water Loss</h1>
+      <div class="post-meta"><span>September 26, 2026</span><span class="post-meta-dot">·</span><span>6 min read</span></div>
+      <p class="author-line">By: <strong>Yunus Aksu, RD, MSc</strong></p>
+    </header>
+    <article class="post-body">
+      <p>Water makes up around 60% of body mass by weight. But for athletes and active individuals, there's a more striking fact: a body mass loss of just <strong>2% through dehydration</strong> can reduce aerobic capacity by 10–20% and cognitive performance by 20–30%. This is a loss you might not feel on the treadmill, but one that could be decisive on race day.</p>
+
+      <h2>How Dehydration Affects Performance</h2>
+      <p>Water loss affects multiple physiological mechanisms: blood volume falls, the heart must beat faster (cardiac drift), oxygen delivery to muscles decreases, muscle contractions slow, and coordination deteriorates. Thermoregulation is impaired too — especially in hot environments, this can set the stage for heat stroke.</p>
+
+      <h2>Read Your Urine Colour</h2>
+      <p>The most practical way to assess hydration status is urine colour. The paler the colour, the better the hydration: pale yellow / lemonade colour = optimal hydration; medium yellow = acceptable; dark yellow = early dehydration; amber = serious dehydration — drink water immediately.</p>
+
+      <h2>How Much Water Do You Need?</h2>
+      <p>The standard "8 glasses a day" recommendation is overly simplistic. Real need: <strong>body weight × 30–35 ml</strong> (for 70 kg, approximately 2.1–2.5 litres). Physical activity significantly increases this: add 500–800 ml per hour of exercise, and consider electrolyte support for sessions over 60 minutes.</p>
+
+      <h2>When Are Sports Drinks Necessary?</h2>
+      <p>Water is sufficient for sessions under 60 minutes. For exercise exceeding 60–90 minutes, particularly in heat or with heavy sweating, isotonic sports drinks — containing sodium, potassium, and carbohydrates — can make a difference. Sodium increases water retention and supports the desire to drink.</p>
+
+      <div class="highlight">
+        <p>💧 <strong>Pre-training strategy:</strong> Drink 400–600 ml of water 2–4 hours before training. Check your urine colour — aim for pale yellow 30 minutes before training too. During exercise, target 150–250 ml of water every 15–20 minutes.</p>
+      </div>
+
+      <div class="citation-box">
+        <div class="citation-label">References</div>
+        <p>Cheuvront SN, Kenefick RW. (2014). Dehydration: Physiology, Assessment, and Performance Effects. Comprehensive Physiology. | Casa DJ. et al. (2019). NATA Position Statement: Fluid Replacement for the Physically Active. Journal of Athletic Training. | Sawka MN. et al. (2007). Exercise and Fluid Replacement. MSSE.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="newsletter-section">
+    <div data-lang="tr" class="visible"><h3>Haftalık Beslenme Bülteni</h3><p>Yeni yazıları kaçırmamak için abone olun.</p></div>
+    <div data-lang="en"><h3>Weekly Nutrition Newsletter</h3><p>Subscribe to stay updated on new posts.</p></div>
+    <form method="POST" action="https://9237d74e.sibforms.com/serve/MUIFAAui1owcltlK9E6Oy2ug2KWv78be_EwMSUiDvNMfqAj2T9bhcN0d0fwqKbS9p93bhfw6pQnLZnOKRaPy9kn10h0rk4Wwfk0DgaxhbszQNaSdnoDcioSBjBuNVvHR2KUW7LaFvLPkqxpZZInezd_bh8h1EVZ3YGTh7xjS6ZPsJl73Y4hQQlzoKl8SKqGHrnriS29GT3uU5se1RQ==" class="newsletter-form">
+      <input type="text" name="email_address_check" value="" style="display:none">
+      <input type="hidden" name="locale" value="tr">
+      <input type="hidden" name="html_type" value="simple">
+      <input type="email" name="EMAIL" required placeholder="e-posta adresiniz">
+      <button type="submit">Abone Ol</button>
+    </form>
+  </div>
+  <div class="post-footer">
+    <a href="index.html" class="back-link">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      <span data-lang="tr" class="visible">Ana sayfaya dön</span>
+      <span data-lang="en">Back to home</span>
+    </a>
+  </div>
+</div>
+<script>
+function setLang(lang){
+  document.querySelectorAll('[data-lang]').forEach(el=>el.classList.toggle('visible',el.dataset.lang===lang));
+  document.getElementById('btn-tr').classList.toggle('active',lang==='tr');
+  document.getElementById('btn-en').classList.toggle('active',lang==='en');
+  document.documentElement.lang=lang;
+}
+</script>
+</body>
+</html>
