@@ -1,0 +1,715 @@
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N2BV722W');</script>
+<!-- End Google Tag Manager -->
+<title>Sağlıklı Besleniyorum?</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@400;600;700&display=swap">
+<style>
+/* ── Tokens ─────────────────────────────────────────── */
+:root {
+  --bg:       #f4f7f4;
+  --card:     #ffffff;
+  --fg:       #182818;
+  --muted:    #4d6b55;
+  --accent:   #2D6A4F;
+  --a-light:  #e6f4ec;
+  --a-pale:   #f0faf4;
+  --sel:      #2563EB;
+  --sel-bg:   #EFF6FF;
+  --border:   #c8dfd0;
+  --s0:       #dc2626;  /* score 0 — red   */
+  --s1:       #d97706;  /* score 1 — amber */
+  --s2:       #ca8a04;  /* score 2 — yellow*/
+  --s3:       #16a34a;  /* score 3 — green */
+  --r:        12px;
+  --shadow:   0 2px 20px rgba(45,106,79,.09);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:      #0d1a10; --card: #172318; --fg: #e2f0e5; --muted: #7aaa85;
+    --accent:  #4ade80; --a-light: #1a3a22; --a-pale: #121f14;
+    --sel:     #60A5FA; --sel-bg: #1E3A5F; --border: #2a4a30;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:      #0d1a10; --card: #172318; --fg: #e2f0e5; --muted: #7aaa85;
+  --accent:  #4ade80; --a-light: #1a3a22; --a-pale: #121f14;
+  --sel:     #60A5FA; --sel-bg: #1E3A5F; --border: #2a4a30;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--bg); color: var(--fg); min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center;
+  padding-block: 32px;
+  padding-left:  max(16px, env(safe-area-inset-left,  0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { width: 100%; max-width: 640px; display: flex; flex-direction: column; gap: 20px; }
+
+/* Header */
+.site-header { display: flex; align-items: center; gap: 10px; }
+.site-header a {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem; color: var(--accent); text-decoration: none; font-weight: 700;
+}
+.site-header a:hover { text-decoration: underline; }
+.pill {
+  font-size: .68rem; font-weight: 700; letter-spacing: .07em;
+  text-transform: uppercase; background: var(--a-light); color: var(--accent);
+  border-radius: 999px; padding: 2px 10px;
+}
+
+/* Card */
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); box-shadow: var(--shadow); padding: 32px;
+}
+@media (max-width: 480px) { .card { padding: 22px 18px; } }
+
+/* Screen */
+.screen { display: none; }
+.screen.active { display: contents; }
+
+/* Intro */
+.intro-card { display: flex; flex-direction: column; gap: 20px; }
+.intro-card h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem; line-height: 1.2; text-wrap: balance;
+}
+.intro-meta { display: flex; gap: 16px; flex-wrap: wrap; }
+.meta-chip {
+  display: flex; align-items: center; gap: 6px;
+  font-size: .85rem; color: var(--muted); font-weight: 600;
+}
+.score-zones {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px; list-style: none;
+}
+.score-zones li {
+  font-size: .85rem; padding: 8px 12px;
+  background: var(--a-pale); border: 1px solid var(--border);
+  border-radius: 8px; display: flex; align-items: center; gap: 7px;
+}
+
+/* Button */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  font-family: 'Lato', sans-serif; font-size: 1rem; font-weight: 700;
+  color: #fff; background: var(--accent); border: none;
+  border-radius: var(--r); padding: 14px 28px; cursor: pointer;
+  transition: opacity .15s, transform .1s; align-self: flex-start;
+}
+.btn:hover { opacity: .88; }
+.btn:active { transform: scale(.97); }
+.btn:disabled { opacity: .4; cursor: default; transform: none; }
+.btn.full { width: 100%; }
+
+/* Progress */
+.progress-wrap { height: 5px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.progress-fill {
+  height: 100%; background: var(--accent); border-radius: 999px;
+  transition: width .35s ease;
+}
+.q-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: .82rem; font-weight: 700; color: var(--muted);
+  letter-spacing: .04em; text-transform: uppercase;
+}
+
+/* Question */
+.q-card { display: flex; flex-direction: column; gap: 22px; }
+.q-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.2rem; line-height: 1.5; text-wrap: balance;
+}
+.options { display: flex; flex-direction: column; gap: 10px; }
+.option {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 16px; border: 1.5px solid var(--border);
+  border-radius: 10px; cursor: pointer; background: var(--card);
+  transition: border-color .15s, background .15s;
+  font-size: .93rem; line-height: 1.4; text-align: left;
+}
+.option:hover { border-color: var(--sel); background: var(--sel-bg); }
+.option.selected { border-color: var(--sel); background: var(--sel-bg); }
+.option-letter {
+  flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--a-light); color: var(--accent); font-weight: 700;
+  font-size: .8rem; display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid var(--border); transition: background .15s, border-color .15s;
+}
+.option.selected .option-letter {
+  background: var(--sel); color: #fff; border-color: var(--sel);
+}
+
+/* Score ring */
+.score-banner {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  text-align: center; padding: 32px 24px 24px;
+}
+.score-ring { position: relative; width: 120px; height: 120px; }
+.score-ring svg { transform: rotate(-90deg); }
+.score-ring circle { fill: none; stroke-width: 9; stroke-linecap: round; }
+.ring-bg   { stroke: var(--border); }
+.ring-fill { stroke: var(--accent); transition: stroke-dashoffset 1s ease; }
+.score-num {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; font-weight: 700;
+}
+.score-num .n { font-size: 2rem; color: var(--accent); line-height: 1; }
+.score-num .d { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.score-banner h2 {
+  font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; text-wrap: balance;
+}
+.score-banner p { font-size: .95rem; color: var(--muted); max-width: 380px; }
+
+/* Category badge */
+.cat-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 14px; border-radius: 999px;
+  font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+}
+
+/* Focus areas */
+.focus-box {
+  background: var(--a-pale); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 20px 24px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.focus-box h3 {
+  font-family: 'Playfair Display', Georgia, serif; font-size: 1rem;
+}
+.focus-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.focus-chip {
+  font-size: .8rem; padding: 4px 12px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 999px; color: var(--muted); font-weight: 600;
+}
+
+/* Email box */
+.email-box {
+  background: var(--a-pale); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 24px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.email-box h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; }
+.email-box p  { font-size: .9rem; color: var(--muted); }
+.email-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.email-row input {
+  flex: 1; min-width: 190px; font-family: 'Lato', sans-serif; font-size: .95rem;
+  padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 10px;
+  background: var(--card); color: var(--fg); outline: none;
+  transition: border-color .15s;
+}
+.email-row input:focus { border-color: var(--accent); }
+.email-row input::placeholder { color: var(--muted); }
+.thanks-msg {
+  display: flex; align-items: center; gap: 10px;
+  font-size: .95rem; font-weight: 600; color: var(--accent); padding: 8px 0;
+}
+
+/* Review */
+.section-label {
+  font-size: .73rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--muted); padding-bottom: 6px;
+}
+.review-list { display: flex; flex-direction: column; gap: 10px; }
+.review-item {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+}
+.review-header { display: flex; align-items: flex-start; gap: 12px; padding: 13px 16px; }
+.score-dot {
+  flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .7rem; font-weight: 700; color: #fff; margin-top: 1px;
+}
+.review-q   { font-size: .88rem; font-weight: 600; line-height: 1.4; min-width: 0; }
+.review-ans { padding: 0 16px 13px calc(16px + 24px + 12px); font-size: .83rem; color: var(--muted); }
+</style>
+
+<div class="wrap">
+  <header class="site-header">
+    <a href="https://diyetisyenyunusaksu.com">Uzm. Dyt. Yunus Aksu</a>
+    <span class="pill">Değerlendirme</span>
+  </header>
+
+  <!-- SCREEN: Intro -->
+  <section id="s-intro" class="screen active">
+    <div class="card intro-card">
+      <div>
+        <div class="pill" style="margin-bottom:12px;display:inline-block">🥗 Beslenme Alışkanlıkları Testi</div>
+        <h1>Sağlıklı besleniyor musunuz?</h1>
+      </div>
+      <div class="intro-meta">
+        <span class="meta-chip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          ~5 dakika
+        </span>
+        <span class="meta-chip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          20 soru
+        </span>
+      </div>
+      <p style="font-size:.9rem;color:var(--muted);line-height:1.6">
+        Bu test bilgi sorusu değil — günlük beslenme alışkanlıklarınızı değerlendiriyor. Her cevap puan taşıyor; toplamda nerede durduğunuzu görüyorsunuz.
+      </p>
+      <ul class="score-zones">
+        <li>🟢 46–60 puan — Mükemmel</li>
+        <li>🟡 31–45 puan — İyi</li>
+        <li>🟠 16–30 puan — Geliştirilmeli</li>
+        <li>🔴 0–15 puan — Acil değişim</li>
+      </ul>
+      <button class="btn" onclick="startQuiz()">Teste Başla →</button>
+    </div>
+  </section>
+
+  <!-- SCREEN: Quiz -->
+  <section id="s-quiz" class="screen">
+    <div class="progress-wrap"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="q-meta">
+      <span id="q-counter">Soru 1 / 20</span>
+      <span id="q-topic"></span>
+    </div>
+    <div class="card q-card">
+      <h2 class="q-text" id="q-text"></h2>
+      <div class="options" id="q-options"></div>
+    </div>
+    <button class="btn" id="btn-next" onclick="nextQuestion()" disabled>Sonraki →</button>
+  </section>
+
+  <!-- SCREEN: Results -->
+  <section id="s-result" class="screen">
+
+    <div class="card score-banner">
+      <div class="score-ring">
+        <svg viewBox="0 0 120 120" width="120" height="120">
+          <circle class="ring-bg"   cx="60" cy="60" r="51"/>
+          <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="51"
+                  stroke-dasharray="320.4" stroke-dashoffset="320.4"/>
+        </svg>
+        <div class="score-num">
+          <span class="n" id="score-n">0</span>
+          <span class="d">/ 60 puan</span>
+        </div>
+      </div>
+      <div id="cat-badge" class="cat-badge"></div>
+      <h2 id="result-title"></h2>
+      <p  id="result-sub"></p>
+    </div>
+
+    <!-- Focus areas (low-scored topics) -->
+    <div class="focus-box" id="focus-box" hidden>
+      <h3>⚠️ Öncelikli Gelişim Alanlarınız</h3>
+      <div class="focus-chips" id="focus-chips"></div>
+      <p style="font-size:.83rem;color:var(--muted)">Bu konularda küçük adımlar beslenme puanınızı hızla yükseltebilir.</p>
+    </div>
+
+    <!-- Email capture -->
+    <div class="email-box">
+      <h3 id="email-title"></h3>
+      <p  id="email-sub"></p>
+      <form id="email-form" onsubmit="submitEmail(event)">
+        <div class="email-row">
+          <input type="email" id="email-input" name="EMAIL"
+                 placeholder="ornek@email.com" autocomplete="email" required>
+          <button class="btn" type="submit">Abone Ol</button>
+        </div>
+      </form>
+      <div id="thanks-msg" class="thanks-msg" hidden>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Teşekkürler! Yakında gelen kutunuzda görüşürüz. 🎉
+      </div>
+    </div>
+
+    <!-- Review -->
+    <div>
+      <div class="section-label">Sorularınız ve Puanlarınız</div>
+      <div class="review-list" id="review-list"></div>
+    </div>
+
+  </section>
+</div>
+
+<script>
+const BREVO = 'https://9237d74e.sibforms.com/serve/MUIFAAui1owcltlK9E6Oy2ug2KWv78be_EwMSUiDvNMfqAj2T9bhcN0d0fwqKbS9p93bhfw6pQnLZnOKRaPy9kn10h0rk4Wwfk0DgaxhbszQNaSdnoDcioSBjBuNVvHR2KUW7LaFvLPkqxpZZInezd_bh8h1EVZ3YGTh7xjS6ZPsJl73Y4hQQlzoKl8SKqGHrnriS29GT3uU5se1RQ==';
+
+const QS = [
+  {
+    topic: 'Hidrasyon',
+    q: 'Günde kaç bardak su içiyorsunuz?',
+    opts: [
+      { text: '1–2 bardak',      s: 0 },
+      { text: '3–4 bardak',      s: 1 },
+      { text: '5–6 bardak',      s: 2 },
+      { text: '7 bardak ve üzeri', s: 3 },
+    ]
+  },
+  {
+    topic: 'Sebze Tüketimi',
+    q: 'Günde kaç porsiyon sebze/yeşillik yiyorsunuz? (1 porsiyon ≈ 1 avuç)',
+    opts: [
+      { text: 'Neredeyse hiç',  s: 0 },
+      { text: '1 porsiyon',     s: 1 },
+      { text: '2 porsiyon',     s: 2 },
+      { text: '3+ porsiyon',    s: 3 },
+    ]
+  },
+  {
+    topic: 'Hazır Yemek',
+    q: 'Haftada kaç kez fast food veya hazır yemek tüketiyorsunuz?',
+    opts: [
+      { text: '4 veya daha fazla kez', s: 0 },
+      { text: '2–3 kez',               s: 1 },
+      { text: '1 kez',                 s: 2 },
+      { text: 'Neredeyse hiç',          s: 3 },
+    ]
+  },
+  {
+    topic: 'Kahvaltı',
+    q: 'Sabah kahvaltısı yapıyor musunuz?',
+    opts: [
+      { text: 'Hiç yapmam',        s: 0 },
+      { text: 'Haftada 1–2 kez',   s: 1 },
+      { text: 'Haftada 3–5 kez',   s: 2 },
+      { text: 'Her gün',           s: 3 },
+    ]
+  },
+  {
+    topic: 'Yağ Tercihi',
+    q: 'Pişirmede hangi yağı tercih ediyorsunuz?',
+    opts: [
+      { text: 'Margarin veya sıvı yağ karışımı', s: 0 },
+      { text: 'Ayçiçek / mısırözü yağı',         s: 1 },
+      { text: 'Zeytinyağı',                       s: 2 },
+      { text: 'Sızma zeytinyağı',                 s: 3 },
+    ]
+  },
+  {
+    topic: 'Şeker',
+    q: 'Şeker ve tatlı tüketiminiz nasıl? (çay/kahve şekeri, tatlı, şekerli içecek)',
+    opts: [
+      { text: 'Her gün çok miktarda',    s: 0 },
+      { text: 'Her gün az miktarda',     s: 1 },
+      { text: 'Haftada birkaç kez',      s: 2 },
+      { text: 'Nadiren',                 s: 3 },
+    ]
+  },
+  {
+    topic: 'Tahıl Tercihi',
+    q: 'Ekmek ve tahıl ürünleri tercihini nasıl yapıyorsunuz?',
+    opts: [
+      { text: 'Sadece beyaz ekmek / makarna / pirinç',  s: 0 },
+      { text: 'Çoğunlukla beyaz, ara sıra tam tahıl',   s: 1 },
+      { text: 'Genellikle tam tahıllı ürünler',          s: 2 },
+      { text: 'Her zaman tam tahıllı veya çavdar',       s: 3 },
+    ]
+  },
+  {
+    topic: 'Protein Kaynağı',
+    q: 'Protein kaynaklarınız genellikle ne?',
+    opts: [
+      { text: 'İşlenmiş etler (sosis, sucuk, kavurma)',         s: 0 },
+      { text: 'Kırmızı et ağırlıklı',                           s: 1 },
+      { text: 'Tavuk veya hindi ağırlıklı',                     s: 2 },
+      { text: 'Balık, baklagil, yumurta çeşitliliği',           s: 3 },
+    ]
+  },
+  {
+    topic: 'Kırmızı Et',
+    q: 'Haftada kaç kez kırmızı et yiyorsunuz?',
+    opts: [
+      { text: 'Her gün',           s: 0 },
+      { text: 'Haftada 3–4 kez',   s: 1 },
+      { text: 'Haftada 1–2 kez',   s: 2 },
+      { text: 'Nadiren',           s: 3 },
+    ]
+  },
+  {
+    topic: 'Balık Tüketimi',
+    q: 'Haftada kaç kez balık tüketiyorsunuz?',
+    opts: [
+      { text: 'Hiç',          s: 0 },
+      { text: 'Ayda 1–2 kez', s: 1 },
+      { text: 'Haftada 1 kez', s: 2 },
+      { text: 'Haftada 2+ kez', s: 3 },
+    ]
+  },
+  {
+    topic: 'Atıştırmalık',
+    q: 'Atıştırmalık olarak genellikle ne tercih edersiniz?',
+    opts: [
+      { text: 'Cips, bisküvi, çikolata',       s: 0 },
+      { text: 'Galeta, kraker',                 s: 1 },
+      { text: 'Meyve veya yoğurt',              s: 2 },
+      { text: 'Kuruyemiş veya sebze çubukları', s: 3 },
+    ]
+  },
+  {
+    topic: 'Öğün Düzeni',
+    q: 'Günlük öğün düzeniniz nasıl?',
+    opts: [
+      { text: 'Düzensiz, sık öğün atlıyorum',             s: 0 },
+      { text: 'Genellikle 1–2 öğün yiyorum',              s: 1 },
+      { text: 'Düzenli 3 ana öğün',                        s: 2 },
+      { text: 'Düzenli 3 ana öğün + sağlıklı ara öğünler', s: 3 },
+    ]
+  },
+  {
+    topic: 'Şekerli İçecek',
+    q: 'Gazlı ve şekerli içecek tüketiminiz nasıl?',
+    opts: [
+      { text: 'Her gün 1 veya daha fazla',  s: 0 },
+      { text: 'Haftada 3–4 kez',            s: 1 },
+      { text: 'Haftada 1–2 kez',            s: 2 },
+      { text: 'Neredeyse hiç',               s: 3 },
+    ]
+  },
+  {
+    topic: 'Dikkatli Yeme',
+    q: 'Yemek yerken dikkatiniz nerede?',
+    opts: [
+      { text: 'Her zaman telefon veya TV karşısında',  s: 0 },
+      { text: 'Çoğunlukla ekran karşısında',           s: 1 },
+      { text: 'Ara sıra dikkat dağıtıcı var',          s: 2 },
+      { text: 'Yemeğe odaklanarak, sofrada yiyorum',   s: 3 },
+    ]
+  },
+  {
+    topic: 'Gece Yeme',
+    q: 'Gece geç saatte (22:00 sonrası) yemek yer misiniz?',
+    opts: [
+      { text: 'Her gece',       s: 0 },
+      { text: 'Haftada 3–4 kez', s: 1 },
+      { text: 'Haftada 1–2 kez', s: 2 },
+      { text: 'Neredeyse hiç',   s: 3 },
+    ]
+  },
+  {
+    topic: 'Pişirme Yöntemi',
+    q: 'Yemek pişirme yönteminiz ağırlıklı olarak ne?',
+    opts: [
+      { text: 'Kızartma',                             s: 0 },
+      { text: 'Sote ve kızartma karışık',              s: 1 },
+      { text: 'Fırın veya ızgara',                    s: 2 },
+      { text: 'Haşlama, buharlı pişirme veya fırın',  s: 3 },
+    ]
+  },
+  {
+    topic: 'Fermente Gıda',
+    q: 'Yoğurt, kefir, turşu gibi fermente gıda tüketiyor musunuz?',
+    opts: [
+      { text: 'Hiç',                s: 0 },
+      { text: 'Nadiren',            s: 1 },
+      { text: 'Haftada birkaç kez', s: 2 },
+      { text: 'Her gün',            s: 3 },
+    ]
+  },
+  {
+    topic: 'Meyve Tüketimi',
+    q: 'Meyve tüketiminiz nasıl?',
+    opts: [
+      { text: 'Neredeyse hiç meyve yemem',                   s: 0 },
+      { text: 'Haftada 1–2 kez, az miktarda',                s: 1 },
+      { text: 'Her gün 1 porsiyon',                           s: 2 },
+      { text: 'Her gün 2+ porsiyon, mevsimsel çeşitlilik',   s: 3 },
+    ]
+  },
+  {
+    topic: 'Tuz',
+    q: 'Tuz kullanımınız nasıl?',
+    opts: [
+      { text: 'Yemeği tatmadan tuz eklerim',                   s: 0 },
+      { text: 'Pişirirken ve yemekte bol tuz kullanırım',      s: 1 },
+      { text: 'Orta düzeyde tuz kullanıyorum',                 s: 2 },
+      { text: 'Az tuz, daha çok baharatla tatlandırıyorum',    s: 3 },
+    ]
+  },
+  {
+    topic: 'Bakliyat',
+    q: 'Haftada kaç kez bakliyat tüketiyorsunuz? (mercimek, nohut, fasulye vb.)',
+    opts: [
+      { text: 'Hiç',          s: 0 },
+      { text: 'Ayda 1–2 kez', s: 1 },
+      { text: 'Haftada 1 kez', s: 2 },
+      { text: 'Haftada 2+ kez', s: 3 },
+    ]
+  }
+];
+
+const LETTERS = ['A','B','C','D'];
+let cur = 0, chosen = new Array(QS.length).fill(-1);
+
+const CATS = [
+  { min: 0,  max: 15, emoji: '🔴', label: 'Acil Değişim',      color: '#dc2626', bg: '#fef2f2',
+    title: 'Beslenme düzeniniz sağlığınızı olumsuz etkileyebilir.',
+    sub: 'Endişelenmeyin — küçük adımlarla başlamak bile büyük fark yaratır. Doğru bilgiye ulaşmak için bültenimize abone olun.',
+    emailTitle: 'Beslenme düzeninizi birlikte iyileştirelim',
+    emailSub: 'Her ay beslenme rehberleri, pratik tarifler ve güncel araştırmalar gelen kutunuza gelsin.' },
+  { min: 16, max: 30, emoji: '🟠', label: 'Geliştirilmeli',    color: '#d97706', bg: '#fffbeb',
+    title: 'Bazı kritik alışkanlıklar değişime hazır.',
+    sub: 'Temel adımları atıyorsunuz; birkaç stratejik değişiklik puanınızı önemli ölçüde yükseltebilir.',
+    emailTitle: 'Beslenme alışkanlıklarınızı güçlendirin',
+    emailSub: 'Bilimsel kanıta dayalı beslenme içerikleri ve pratik ipuçları için bültenimize abone olun.' },
+  { min: 31, max: 45, emoji: '🟡', label: 'İyi',              color: '#ca8a04', bg: '#fefce8',
+    title: 'Yolundasınız — ince ayar zamanı.',
+    sub: 'Beslenme temelleriniz sağlam. Birkaç hedefli iyileştirme ile mükemmel seviyeye ulaşabilirsiniz.',
+    emailTitle: 'Son adımları birlikte atalım',
+    emailSub: 'Beslenme düzeyinizi mükemmele taşıyacak içerikler için bültenimize abone olun.' },
+  { min: 46, max: 60, emoji: '🟢', label: 'Mükemmel',         color: '#16a34a', bg: '#f0fdf4',
+    title: 'Beslenme alışkanlıklarınız sağlıklı yaşamı destekliyor! 🎉',
+    sub: 'Üst düzey beslenme alışkanlıkları sergiliyorsunuz. Bu düzeyi korumak ve yeni şeyler öğrenmek için bültenimize abone olun.',
+    emailTitle: 'Yeni testler ve güncel araştırmalar için abone olun',
+    emailSub: 'Beslenme düzeyinizi koruyun — bilim dünyasındaki gelişmeler ve yeni testler doğrudan gelen kutunuza gelsin.' },
+];
+
+function getCategory(score) {
+  return CATS.find(c => score >= c.min && score <= c.max) || CATS[0];
+}
+
+function show(id) {
+  ['s-intro','s-quiz','s-result'].forEach(s =>
+    document.getElementById(s).classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function startQuiz() { cur = 0; renderQuestion(); show('s-quiz'); }
+
+function renderQuestion() {
+  const q = QS[cur];
+  document.getElementById('progress-fill').style.width = (cur / QS.length * 100) + '%';
+  document.getElementById('q-counter').textContent = `Soru ${cur + 1} / ${QS.length}`;
+  document.getElementById('q-topic').textContent   = q.topic;
+  document.getElementById('q-text').textContent    = q.q;
+
+  const wrap = document.getElementById('q-options');
+  wrap.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option' + (chosen[cur] === i ? ' selected' : '');
+    btn.innerHTML = `<span class="option-letter">${LETTERS[i]}</span>${opt.text}`;
+    btn.onclick   = () => selectOption(i);
+    wrap.appendChild(btn);
+  });
+
+  const nx = document.getElementById('btn-next');
+  nx.disabled    = chosen[cur] === -1;
+  nx.textContent = cur === QS.length - 1 ? 'Sonuçları Gör →' : 'Sonraki →';
+}
+
+function selectOption(i) {
+  chosen[cur] = i;
+  document.querySelectorAll('.option').forEach((el, idx) =>
+    el.classList.toggle('selected', idx === i));
+  document.getElementById('btn-next').disabled = false;
+}
+
+function nextQuestion() {
+  if (cur < QS.length - 1) { cur++; renderQuestion(); }
+  else showResults();
+}
+
+function showResults() {
+  show('s-result');
+
+  const score = QS.reduce((n, q, i) =>
+    n + (chosen[i] >= 0 ? q.opts[chosen[i]].s : 0), 0);
+  const cat = getCategory(score);
+
+  /* Ring */
+  document.getElementById('score-n').textContent = score;
+  const circ   = 2 * Math.PI * 51; // ≈ 320.4
+  const offset = circ * (1 - score / 60);
+  requestAnimationFrame(() => {
+    document.getElementById('ring-fill').style.strokeDashoffset = offset;
+    document.getElementById('ring-fill').style.stroke = cat.color;
+  });
+
+  /* Badge */
+  const badge = document.getElementById('cat-badge');
+  badge.textContent = `${cat.emoji} ${cat.label}`;
+  badge.style.background = cat.bg;
+  badge.style.color      = cat.color;
+  badge.style.border     = `1px solid ${cat.color}40`;
+
+  document.getElementById('result-title').textContent = cat.title;
+  document.getElementById('result-sub').textContent   = cat.sub;
+
+  /* Focus areas (questions scored 0) */
+  const lowTopics = QS
+    .map((q, i) => ({ topic: q.topic, s: chosen[i] >= 0 ? q.opts[chosen[i]].s : 0 }))
+    .filter(x => x.s === 0)
+    .map(x => x.topic);
+
+  if (lowTopics.length > 0) {
+    const focusBox   = document.getElementById('focus-box');
+    const focusChips = document.getElementById('focus-chips');
+    focusBox.hidden  = false;
+    focusChips.innerHTML = lowTopics.map(t =>
+      `<span class="focus-chip">⚠️ ${t}</span>`).join('');
+  }
+
+  /* Email */
+  document.getElementById('email-title').textContent = cat.emailTitle;
+  document.getElementById('email-sub').textContent   = cat.emailSub;
+
+  /* Review */
+  buildReview();
+}
+
+function buildReview() {
+  const list = document.getElementById('review-list');
+  list.innerHTML = '';
+
+  const DOT_COLORS = ['#dc2626','#d97706','#ca8a04','#16a34a'];
+
+  QS.forEach((q, i) => {
+    const sel   = chosen[i];
+    const sc    = sel >= 0 ? q.opts[sel].s : 0;
+    const color = DOT_COLORS[sc];
+
+    const item   = document.createElement('div');
+    item.className = 'review-item';
+
+    const hdr  = document.createElement('div');
+    hdr.className = 'review-header';
+
+    const dot  = document.createElement('div');
+    dot.className = 'score-dot';
+    dot.style.background = color;
+    dot.textContent = sc;
+
+    const qtext = document.createElement('div');
+    qtext.className = 'review-q';
+    qtext.textContent = `${i + 1}. ${q.q}`;
+
+    hdr.appendChild(dot);
+    hdr.appendChild(qtext);
+
+    const ans = document.createElement('div');
+    ans.className = 'review-ans';
+    ans.textContent = sel >= 0
+      ? `Cevabınız: ${LETTERS[sel]}. ${q.opts[sel].text} — ${sc}/3 puan`
+      : 'Cevaplanmadı';
+    ans.style.color = color;
+
+    item.appendChild(hdr);
+    item.appendChild(ans);
+    list.appendChild(item);
+  });
+}
+
+async function submitEmail(e) {
+  e.preventDefault();
+  const email = document.getElementById('email-input').value.trim();
+  if (!email) return;
+  const fd = new FormData();
+  fd.append('EMAIL', email);
+  try { await fetch(BREVO, { method: 'POST', mode: 'no-cors', body: fd }); }
+  catch(_) {}
+  document.getElementById('email-form').hidden  = true;
+  document.getElementById('thanks-msg').hidden  = false;
+}
+</script>
