@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N2BV722W');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beslenme Testleri</title>
+<meta name="description" content="Beslenme bilginizi ve alışkanlıklarınızı ölçün. Uzman diyetisyen tarafından hazırlanmış ücretsiz testler.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --surface: #ffffff;
+    --fg: #1a1a1a;
+    --fg-muted: #555550;
+    --accent: #2D6A4F;
+    --accent-light: #e8f4ee;
+    --accent-mid: #40916c;
+    --border: #e8e8e3;
+    --tag-bg: #e8f4ee;
+    --tag-fg: #1b4332;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1a14;
+      --surface: #172217;
+      --fg: #e8ede9;
+      --fg-muted: #9aad9e;
+      --accent: #52b788;
+      --accent-light: #1b2e22;
+      --accent-mid: #74c69d;
+      --border: #2a3d2e;
+      --tag-bg: #1b2e22;
+      --tag-fg: #95d5b2;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1a14;
+    --surface: #172217;
+    --fg: #e8ede9;
+    --fg-muted: #9aad9e;
+    --accent: #52b788;
+    --accent-light: #1b2e22;
+    --accent-mid: #74c69d;
+    --border: #2a3d2e;
+    --tag-bg: #1b2e22;
+    --tag-fg: #95d5b2;
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 0;
+  }
+
+  nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 max(16px, env(safe-area-inset-left, 0px));
+    padding-block: 0;
+  }
+  .nav-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-links a {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+  .hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 0 48px;
+    text-align: center;
+  }
+  .hero-label {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-fg);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-wrap: balance;
+    margin-bottom: 14px;
+  }
+  .hero p {
+    color: var(--fg-muted);
+    font-size: 1rem;
+    font-weight: 300;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .cards {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    padding-bottom: 80px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .2s, box-shadow .2s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(45,106,79,.12);
+  }
+
+  .card-banner {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-banner-1 { background: linear-gradient(135deg, #1b4332 0%, #2D6A4F 60%, #40916c 100%); }
+  .card-banner-2 { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 60%, #60a5fa 100%); }
+
+  .card-banner .badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+  }
+
+  .card-body {
+    padding: 28px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 10px;
+  }
+
+  .card-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+    font-weight: 300;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .card-meta {
+    display: flex;
+    gap: 16px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+  .card-meta span {
+    font-size: 0.8rem;
+    color: var(--fg-muted);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    transition: background .2s, color .2s;
+    align-self: flex-start;
+  }
+  .cta-green { background: var(--accent); color: #fff; }
+  .cta-green:hover { background: var(--accent-mid); }
+  .cta-blue { background: #2563eb; color: #fff; }
+  .cta-blue:hover { background: #1d4ed8; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px max(16px, env(safe-area-inset-left, 0px));
+    text-align: center;
+  }
+  footer p { font-size: 0.82rem; color: var(--fg-muted); }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 500px) {
+    .hero { padding: 40px 0 32px; }
+    .card-body { padding: 22px 20px 18px; }
+  }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2BV722W" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="/">Dyt. Yunus Aksu</a>
+    <div class="nav-links">
+      <a href="/">Ana Sayfa</a>
+      <a href="/testler.html" class="active">Testler</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">Ücretsiz Testler</div>
+  <h1>Beslenmenizi Değerlendirin</h1>
+  <p>Bilginizi ölçün veya alışkanlıklarınızı keşfedin — her iki test de bilimsel temele dayanır.</p>
+</div>
+
+<div class="cards">
+
+  <a class="card" href="/saglikli-beslenme-testi.html">
+    <div class="card-banner card-banner-1">
+      🥗
+      <span class="badge">20 Soru</span>
+    </div>
+    <div class="card-body">
+      <div class="card-tag">Alışkanlık Değerlendirmesi</div>
+      <h2>Sağlıklı Besleniyorum?</h2>
+      <p>Günlük beslenme alışkanlıklarınızı 20 soruda değerlendirin. Hidrasyon, sebze tüketimi, öğün düzeni ve daha fazlası — puanınız size güçlü ve zayıf yönlerinizi gösterir.</p>
+      <div class="card-meta">
+        <span>⏱ 5–7 dakika</span>
+        <span>📊 Puanlama bazlı</span>
+      </div>
+      <span class="card-cta cta-green">Teste Başla →</span>
+    </div>
+  </a>
+
+  <a class="card" href="/beslenme-testi.html">
+    <div class="card-banner card-banner-2">
+      🧠
+      <span class="badge">8 Soru</span>
+    </div>
+    <div class="card-body">
+      <div class="card-tag">Bilgi Testi</div>
+      <h2>Beslenme Bilgi Testi</h2>
+      <p>Makrobesinler, vitamin kaynakları, glisemik indeks… Beslenme bilginizi 8 soruda ölçün. Her sorunun ardından doğru cevabı ve bilimsel açıklamasını öğrenin.</p>
+      <div class="card-meta">
+        <span>⏱ 3–5 dakika</span>
+        <span>✅ Doğru / Yanlış</span>
+      </div>
+      <span class="card-cta cta-blue">Teste Başla →</span>
+    </div>
+  </a>
+
+</div>
+
+<footer>
+  <p>© 2026 Uzm. Dyt. Yunus Aksu · <a href="/">diyetisyenyunusaksu.com</a></p>
+</footer>
+
+</body>
+</html>
